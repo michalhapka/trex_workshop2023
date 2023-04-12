@@ -1,4 +1,4 @@
-Date: 11/04/2023 20:09:18
+Date: 11/04/2023 20:45:38
 ===============
 Quantum Package
 ===============
@@ -6,7 +6,7 @@ Quantum Package
 Git Commit: Dev stable
 Git Date  : Tue Apr 11 12:59:43 2023 +0200
 Git SHA1  : 06be65745fb201a2002e9a49a96b0101f84f5b14
-EZFIO Dir : B_6.6
+EZFIO Dir : B_4.0
 
 
 Task server running : tcp://127.0.1.1:41279
@@ -15,15 +15,15 @@ Task server running : tcp://127.0.1.1:41279
 .. >>>>> [ RES  MEM :          0.022 GB ] [ VIRT MEM :          0.165 GB ] <<<<< ..
 .. >>>>> [ WALL TIME:           0.00  s ] [ CPU  TIME:           0.02  s ] <<<<< ..
  
-* Dimension of the psi arrays                                  321
+* Dimension of the psi arrays                                  481
 .. >>>>> [ IO READ: n_states ] <<<<< ..
  
 .. >>>>> [ RES  MEM :          0.022 GB ] [ VIRT MEM :          0.165 GB ] <<<<< ..
 .. >>>>> [ WALL TIME:           0.00  s ] [ CPU  TIME:           0.02  s ] <<<<< ..
  
  * mo_label          Canonical
-* Number of determinants                                       321
- Read psi_coef         321           1
+* Number of determinants                                       481
+ Read psi_coef         481           1
 * mo_num                                                        27
 * N_int                                                          1
 .. >>>>> [ IO READ: elec_beta_num ] <<<<< ..
@@ -43,12 +43,12 @@ Task server running : tcp://127.0.1.1:41279
 .. >>>>> [ IO READ: weight_one_e_dm ] <<<<< ..
  
 .. >>>>> [ RES  MEM :          0.024 GB ] [ VIRT MEM :          0.166 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.01  s ] [ CPU  TIME:           0.02  s ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.01  s ] [ CPU  TIME:           0.03  s ] <<<<< ..
  
 .. >>>>> [ IO READ: do_pseudo ] <<<<< ..
  
 .. >>>>> [ RES  MEM :          0.024 GB ] [ VIRT MEM :          0.166 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.01  s ] [ CPU  TIME:           0.02  s ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.01  s ] [ CPU  TIME:           0.03  s ] <<<<< ..
  
  
 .. >>>>> [ RES  MEM :          0.024 GB ] [ VIRT MEM :          0.166 GB ] <<<<< ..
@@ -62,8 +62,8 @@ Nuclear Coordinates (Angstroms)
       Atom          Charge          X            Y            Z 
 ================ ============ ============ ============ ============
 x                    0.000000     0.000000     0.000000     0.000000
-H                    1.000000     0.000000     0.381040    -3.492570
-H                    1.000000     0.000000    -0.381040    -3.492570
+H                    1.000000     0.000000     0.381040    -2.116709
+H                    1.000000     0.000000    -0.381040    -2.116709
 ================ ============ ============ ============ ============
 
 Minimal interatomic distance found:       0.7621 Angstrom
@@ -99,12 +99,12 @@ Minimal interatomic distance found:       0.7621 Angstrom
 .. >>>>> [ IO READ: io_ao_integrals_n_e ] <<<<< ..
  
 .. >>>>> [ RES  MEM :          0.028 GB ] [ VIRT MEM :          0.166 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.02  s ] [ CPU  TIME:           0.03  s ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.03  s ] [ CPU  TIME:           0.04  s ] <<<<< ..
  
 .. >>>>> [ IO READ: io_ao_integrals_overlap ] <<<<< ..
  
 .. >>>>> [ RES  MEM :          0.028 GB ] [ VIRT MEM :          0.166 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.02  s ] [ CPU  TIME:           0.04  s ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.03  s ] [ CPU  TIME:           0.04  s ] <<<<< ..
  
  AO one-e integrals
  AO map initialized :                  71631
@@ -112,21 +112,21 @@ Minimal interatomic distance found:       0.7621 Angstrom
  Sorting the map
  AO integrals provided:
   Size of AO map :           0.381711959838867      MB
-  Number of AO integrals :                 35369
-  cpu  time :  0.107211000000000      s
-  wall time :  0.117451906204224      s  ( x   0.912807662853791       )
+  Number of AO integrals :                 35469
+  cpu  time :  0.107405000000000      s
+  wall time :  0.118720054626465      s  ( x   0.904691295315977       )
  AO two-e integrals
  MOs
 .. >>>>> [ IO READ: io_mo_one_e_integrals ] <<<<< ..
  
 .. >>>>> [ RES  MEM :          0.042 GB ] [ VIRT MEM :          0.518 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.20  s ] [ CPU  TIME:           0.25  s ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.20  s ] [ CPU  TIME:           0.26  s ] <<<<< ..
  
  Providing the one-electron integrals
 .. >>>>> [ IO READ: io_mo_integrals_kinetic ] <<<<< ..
  
 .. >>>>> [ RES  MEM :          0.042 GB ] [ VIRT MEM :          0.518 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.20  s ] [ CPU  TIME:           0.25  s ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.20  s ] [ CPU  TIME:           0.26  s ] <<<<< ..
  
 .. >>>>> [ IO READ: io_mo_integrals_n_e ] <<<<< ..
  
@@ -137,13 +137,13 @@ Minimal interatomic distance found:       0.7621 Angstrom
 .. >>>>> [ IO READ: io_mo_two_e_integrals ] <<<<< ..
  
 .. >>>>> [ RES  MEM :          0.044 GB ] [ VIRT MEM :          0.593 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.22  s ] [ CPU  TIME:           0.29  s ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.22  s ] [ CPU  TIME:           0.28  s ] <<<<< ..
  
  MO map initialized:                  71631
 .. >>>>> [ IO READ: no_vvvv_integrals ] <<<<< ..
  
 .. >>>>> [ RES  MEM :          0.044 GB ] [ VIRT MEM :          0.593 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.22  s ] [ CPU  TIME:           0.29  s ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.22  s ] [ CPU  TIME:           0.28  s ] <<<<< ..
  
 .. >>>>> [ IO READ: mo_class ] <<<<< ..
  
@@ -154,28 +154,28 @@ Minimal interatomic distance found:       0.7621 Angstrom
 .. >>>>> [ IO READ: mo_integrals_threshold ] <<<<< ..
  
 .. >>>>> [ RES  MEM :          0.044 GB ] [ VIRT MEM :          0.593 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.22  s ] [ CPU  TIME:           0.29  s ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.22  s ] [ CPU  TIME:           0.28  s ] <<<<< ..
  
  Getting AOs
 .. >>>>> [ IO READ: ao_one_e_integrals_threshold ] <<<<< ..
  
 .. >>>>> [ RES  MEM :          0.044 GB ] [ VIRT MEM :          0.597 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.22  s ] [ CPU  TIME:           0.29  s ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.23  s ] [ CPU  TIME:           0.28  s ] <<<<< ..
  
  1st transformation
  2nd transformation
  3rd transformation
  4th transformation
  Molecular integrals provided:
-  Size of MO map              1.28790283203125      MB
-  Number of MO integrals:                  48906
-  cpu  time :  0.102912000000000      s
-  wall time :  5.151486396789551E-002 s  ( x    1.99771468025492      )
+  Size of MO map             0.572484970092773      MB
+  Number of MO integrals:                  27634
+  cpu  time :  5.653499999999995E-002 s
+  wall time :  2.832603454589844E-002 s  ( x    1.99586708504478      )
  MO two-e integrals
 .. >>>>> [ IO READ: no_core_density ] <<<<< ..
  
-.. >>>>> [ RES  MEM :          0.062 GB ] [ VIRT MEM :          2.713 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.34  s ] [ CPU  TIME:           0.51  s ] <<<<< ..
+.. >>>>> [ RES  MEM :          0.057 GB ] [ VIRT MEM :          2.711 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.31  s ] [ CPU  TIME:           0.45  s ] <<<<< ..
  
 * Number of inactive MOs                                         0
  Inactive MOs:
@@ -192,11 +192,11 @@ Minimal interatomic distance found:       0.7621 Angstrom
  
  providint state_av_act_2_rdm_ab_mo 
  ispin =            3
- Wall time to provide state_av_act_2_rdm_ab_mo  5.980968475341797E-003
- Wall time to provide state_av_act_2_rdm_aa_mo  1.271009445190430E-003
- Wall time to provide state_av_act_2_rdm_bb_mo  1.266956329345703E-003
+ Wall time to provide state_av_act_2_rdm_ab_mo  1.217913627624512E-002
+ Wall time to provide state_av_act_2_rdm_aa_mo  2.212047576904297E-003
+ Wall time to provide state_av_act_2_rdm_bb_mo  2.236843109130859E-003
  providing state_av_act_2_rdm_spin_trace_mo 
- Time to provide state_av_act_2_rdm_spin_trace_mo  1.002073287963867E-003
+ Time to provide state_av_act_2_rdm_spin_trace_mo  1.029014587402344E-003
 * Number of core     MOs                                         0
  Core MOs:
  
@@ -209,15 +209,15 @@ Minimal interatomic distance found:       0.7621 Angstrom
  Two-e RDM
 
   ******    CHOLESKY DECOMPOSITION OF 2-RDM    ******
-  Estimated number of Chol vectors  194
-  Estimated error in norm     -0.0000
+  Estimated number of Chol vectors   92
+  Estimated error in norm     -0.0002
 
-  Cholesky decomposition of active 2-RDM completed. Tol:   0.10E-07
+  Cholesky decomposition of active 2-RDM completed. Tol:   0.10E-04
   Number of Cholesky vectors:    1
   Number of orbitals and the NChol/mo_num ratio:  27    0.04
 Wall time: 0:00:02
 
-Date: 11/04/2023 20:09:21
+Date: 11/04/2023 20:45:41
 ===============
 Quantum Package
 ===============
@@ -225,7 +225,7 @@ Quantum Package
 Git Commit: Dev stable
 Git Date  : Tue Apr 11 12:59:43 2023 +0200
 Git SHA1  : 06be65745fb201a2002e9a49a96b0101f84f5b14
-EZFIO Dir : B_6.6
+EZFIO Dir : B_4.0
 
 
 Task server running : tcp://127.0.1.1:41279
@@ -246,8 +246,8 @@ Nuclear Coordinates (Angstroms)
       Atom          Charge          X            Y            Z 
 ================ ============ ============ ============ ============
 x                    0.000000     0.000000     0.000000     0.000000
-H                    1.000000     0.000000     0.381040    -3.492570
-H                    1.000000     0.000000    -0.381040    -3.492570
+H                    1.000000     0.000000     0.381040    -2.116709
+H                    1.000000     0.000000    -0.381040    -2.116709
 ================ ============ ============ ============ ============
 
 Minimal interatomic distance found:       0.7621 Angstrom
@@ -258,7 +258,7 @@ Minimal interatomic distance found:       0.7621 Angstrom
 * Nuclear repulsion energy                          0.6943856145521005    
  nuclear_repulsion:   0.694385614552100     
  * mo_label          Canonical
-* Number of determinants                                       321
+* Number of determinants                                       481
 .. >>>>> [ IO READ: n_states ] <<<<< ..
  
 .. >>>>> [ RES  MEM :          0.022 GB ] [ VIRT MEM :          0.165 GB ] <<<<< ..
@@ -266,7 +266,7 @@ Minimal interatomic distance found:       0.7621 Angstrom
  
 * mo_num                                                        27
 * N_int                                                          1
-* Dimension of the psi arrays                                  321
+* Dimension of the psi arrays                                  481
 .. >>>>> [ IO READ: elec_beta_num ] <<<<< ..
  
 .. >>>>> [ RES  MEM :          0.022 GB ] [ VIRT MEM :          0.165 GB ] <<<<< ..
@@ -279,17 +279,17 @@ Minimal interatomic distance found:       0.7621 Angstrom
  
  Read  mo_coef
  Read psi_det
- Read psi_coef         321           1
+ Read psi_coef         481           1
 .. >>>>> [ IO READ: io_mo_two_e_integrals ] <<<<< ..
  
-.. >>>>> [ RES  MEM :          0.024 GB ] [ VIRT MEM :          0.165 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.01  s ] [ CPU  TIME:           0.03  s ] <<<<< ..
+.. >>>>> [ RES  MEM :          0.025 GB ] [ VIRT MEM :          0.169 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.02  s ] [ CPU  TIME:           0.03  s ] <<<<< ..
  
  MO map initialized:                  71631
 .. >>>>> [ IO READ: no_vvvv_integrals ] <<<<< ..
  
-.. >>>>> [ RES  MEM :          0.024 GB ] [ VIRT MEM :          0.165 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.01  s ] [ CPU  TIME:           0.03  s ] <<<<< ..
+.. >>>>> [ RES  MEM :          0.025 GB ] [ VIRT MEM :          0.169 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.02  s ] [ CPU  TIME:           0.03  s ] <<<<< ..
  
 .. >>>>> [ IO READ: mo_class ] <<<<< ..
  AO map initialized :                  71631
@@ -297,9 +297,9 @@ Minimal interatomic distance found:       0.7621 Angstrom
  Sorting the map
  AO integrals provided:
   Size of AO map :           0.381711959838867      MB
-  Number of AO integrals :                 35369
-  cpu  time :  0.111738000000000      s
-  wall time :  0.123239040374756      s  ( x   0.906676972331313       )
+  Number of AO integrals :                 35469
+  cpu  time :  0.107573000000000      s
+  wall time :  0.119935989379883      s  ( x   0.896920103433470       )
  
  AO -> MO integrals transformation
  ---------------------------------
@@ -307,66 +307,66 @@ Minimal interatomic distance found:       0.7621 Angstrom
 * Target maximum memory (GB)                                  2000
 .. >>>>> [ IO READ: mo_integrals_threshold ] <<<<< ..
  
-.. >>>>> [ RES  MEM :          0.027 GB ] [ VIRT MEM :          0.376 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.13  s ] [ CPU  TIME:           0.14  s ] <<<<< ..
+.. >>>>> [ RES  MEM :          0.028 GB ] [ VIRT MEM :          0.380 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.14  s ] [ CPU  TIME:           0.14  s ] <<<<< ..
  
  Getting AOs
 .. >>>>> [ IO READ: io_ao_integrals_overlap ] <<<<< ..
  
-.. >>>>> [ RES  MEM :          0.027 GB ] [ VIRT MEM :          0.380 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.13  s ] [ CPU  TIME:           0.14  s ] <<<<< ..
+.. >>>>> [ RES  MEM :          0.028 GB ] [ VIRT MEM :          0.384 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.14  s ] [ CPU  TIME:           0.14  s ] <<<<< ..
  
 .. >>>>> [ IO READ: ao_one_e_integrals_threshold ] <<<<< ..
  
-.. >>>>> [ RES  MEM :          0.027 GB ] [ VIRT MEM :          0.380 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.13  s ] [ CPU  TIME:           0.14  s ] <<<<< ..
+.. >>>>> [ RES  MEM :          0.028 GB ] [ VIRT MEM :          0.384 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.14  s ] [ CPU  TIME:           0.14  s ] <<<<< ..
  
  1st transformation
  2nd transformation
  3rd transformation
  4th transformation
  Molecular integrals provided:
-  Size of MO map              1.28790283203125      MB
-  Number of MO integrals:                  48906
-  cpu  time :  0.193866000000000      s
-  wall time :  0.105631828308105      s  ( x    1.83529910544135      )
+  Size of MO map             0.572484970092773      MB
+  Number of MO integrals:                  27640
+  cpu  time :  0.172824000000000      s
+  wall time :  9.525799751281738E-002 s  ( x    1.81427286435184      )
 .. >>>>> [ IO READ: io_mo_integrals_n_e ] <<<<< ..
  
-.. >>>>> [ RES  MEM :          0.056 GB ] [ VIRT MEM :          2.713 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.29  s ] [ CPU  TIME:           0.44  s ] <<<<< ..
+.. >>>>> [ RES  MEM :          0.053 GB ] [ VIRT MEM :          2.712 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.28  s ] [ CPU  TIME:           0.42  s ] <<<<< ..
  
 .. >>>>> [ IO READ: io_ao_integrals_n_e ] <<<<< ..
  
-.. >>>>> [ RES  MEM :          0.056 GB ] [ VIRT MEM :          2.713 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.29  s ] [ CPU  TIME:           0.44  s ] <<<<< ..
+.. >>>>> [ RES  MEM :          0.053 GB ] [ VIRT MEM :          2.712 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.28  s ] [ CPU  TIME:           0.42  s ] <<<<< ..
  
 .. >>>>> [ IO READ: do_pseudo ] <<<<< ..
  
-.. >>>>> [ RES  MEM :          0.056 GB ] [ VIRT MEM :          2.713 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.29  s ] [ CPU  TIME:           0.44  s ] <<<<< ..
+.. >>>>> [ RES  MEM :          0.053 GB ] [ VIRT MEM :          2.712 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.28  s ] [ CPU  TIME:           0.42  s ] <<<<< ..
  
 .. >>>>> [ IO READ: io_mo_integrals_kinetic ] <<<<< ..
  
-.. >>>>> [ RES  MEM :          0.056 GB ] [ VIRT MEM :          2.713 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.29  s ] [ CPU  TIME:           0.45  s ] <<<<< ..
+.. >>>>> [ RES  MEM :          0.053 GB ] [ VIRT MEM :          2.712 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.28  s ] [ CPU  TIME:           0.42  s ] <<<<< ..
  
 .. >>>>> [ IO READ: io_ao_integrals_kinetic ] <<<<< ..
  
-.. >>>>> [ RES  MEM :          0.056 GB ] [ VIRT MEM :          2.713 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.29  s ] [ CPU  TIME:           0.45  s ] <<<<< ..
+.. >>>>> [ RES  MEM :          0.053 GB ] [ VIRT MEM :          2.712 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.28  s ] [ CPU  TIME:           0.42  s ] <<<<< ..
  
 .. >>>>> [ IO READ: io_mo_one_e_integrals ] <<<<< ..
  
-.. >>>>> [ RES  MEM :          0.056 GB ] [ VIRT MEM :          2.713 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.30  s ] [ CPU  TIME:           0.45  s ] <<<<< ..
+.. >>>>> [ RES  MEM :          0.053 GB ] [ VIRT MEM :          2.712 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.28  s ] [ CPU  TIME:           0.42  s ] <<<<< ..
  
  Providing the one-electron integrals
  Providing the H_matrix_all_dets ...
  H_matrix_all_dets done 
 .. >>>>> [ IO READ: io_mo_integrals_pseudo ] <<<<< ..
  
-.. >>>>> [ RES  MEM :          0.058 GB ] [ VIRT MEM :          2.713 GB ] <<<<< ..
-.. >>>>> [ WALL TIME:           0.30  s ] [ CPU  TIME:           0.46  s ] <<<<< ..
+.. >>>>> [ RES  MEM :          0.055 GB ] [ VIRT MEM :          2.712 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:           0.30  s ] [ CPU  TIME:           0.44  s ] <<<<< ..
  
 * Number of unique beta determinants                            27
 * Number of unique alpha determinants                           27
@@ -383,11 +383,11 @@ Minimal interatomic distance found:       0.7621 Angstrom
  ---------
  
  Vnn  =   0.694385614552100     
- One-e    -2.44331010859862     
- Vee  =   0.584017504291446     
- Eele =   -1.85929260430717     
- ETot =   -1.16490698975507     
+ One-e    -1.68362542515837     
+ Vee  =   0.282877584867978     
+ Eele =   -1.40074784029039     
+ ETot =  -0.706362225738292     
  
  
-Wall time: 0:00:01
+Wall time: 0:00:02
 

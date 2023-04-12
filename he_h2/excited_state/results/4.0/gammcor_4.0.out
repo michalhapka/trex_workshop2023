@@ -1,0 +1,1319 @@
+ 
+ GIT INFO
+********************************************************************************
+ Branch:             IntCholesky
+ Revision (short):   435bb1b
+ Revision (full):    435bb1bf5b6b4ee23902f492453f820b85226bc8
+ Latest commit date: Mon Apr 3 19:16:36 2023 +0200
+ Latest tag:         v-4.1
+ 
+ 
+ BUILD INFO
+********************************************************************************
+ Fortran compiler:   Intel 
+ /opt/intel/oneapi/compiler/2023.0.0/linux/bin/intel64/ifort
+ C++ compiler:       Intel 
+ /opt/intel/oneapi/compiler/2023.0.0/linux/bin/intel64/icpc
+ C compiler:         Intel 
+ /opt/intel/oneapi/compiler/2023.0.0/linux/bin/intel64/icc
+ Compile options:    -assume byterecl -heap-arrays -O3 -g -xHost
+ BLAS libraries:     
+ /opt/intel/oneapi/mkl/2023.0.0/lib/intel64/libmkl_intel_lp64.so /opt/intel/onea
+ pi/mkl/2023.0.0/lib/intel64/libmkl_intel_thread.so /opt/intel/oneapi/mkl/2023.0
+ .0/lib/intel64/libmkl_core.so /opt/intel/oneapi/compiler/2023.0.0/linux/compile
+ r/lib/intel64_lin/libiomp5.so -lpthread -lm -ldl
+ 
+ NBasis WILL BE READ FROM MOLPRO
+
+ INPUT 
+********************************************************************************
+ JOB TITLE:     H2-H2 4.0 (QPACKAGE)
+ INTERFACE:     TREXIO  
+ JOB TYPE:      SAPT     
+ RDM TYPE:      CI      
+ RDM SOURCE:    DALTON  
+
+ MONOMER:       A       
+ ZNUCL:         2
+ CHARGE:        0
+ NO. OF ATOMS:  1
+ NO. OF SYM. EQUIV. ATOMS:  1
+
+ MONOMER:       B       
+ ZNUCL:         2
+ CHARGE:        0
+ NO. OF ATOMS:  2
+ NO. OF SYM. EQUIV. ATOMS:  2
+
+
+ INPUT CHECK PASSED
+********************************************************************************
+
+ IDALTON         0
+ IRes            0
+ IAO             0
+ INO             0
+ NoSym           1
+ IGVB            0
+ IFun           13
+ IFunSR          0
+ IFunSRKer       0
+ IModG           1
+ NGOcc           0
+ ILoc            1
+ IFreeze         0
+ IAPSG           0
+ ISERPA          0
+ IA              1
+ ICASSCF         0
+ IDMRG           0
+ IFlAC           0
+ IFLSnd          0
+ IFlCore         1
+ IFlFrag         0
+ IFl12           1
+ ISAPT           1
+
+ SYSTEM 
+********************************************************************************
+ MONOMER A
+ NUCLEAR CHARGE:   2
+ CHARGE:           0
+ NO.OF ATOMS:      1
+ THRESH ACTIVE:    0.100000E-08
+
+ MONOMER B
+ NUCLEAR CHARGE:   2
+ CHARGE:           0
+ NO.OF ATOMS:      2
+ THRESH ACTIVE:    0.100000E-08
+ PRINT LEVEL:     11
+
+
+ IFunSR=0
+
+ IFunSRKer=0
+
+
+ STARTING SAPT CALCULATIONS
+********************************************************************************
+ One-electron integrals written to file: ONEEL_A
+ Total number of nuclei :           3
+ Charges on centers
+  1    2.000000
+  2    0.000000
+  3    0.000000
+ Cartesian coordinates (Angstrom)
+  1    0.000000    0.000000    0.000000
+  2    0.000000    0.000000    0.000000
+  3    0.000000    0.000000    0.000000
+ 
+ One-electron integrals written to file: ONEEL_B
+ Total number of nuclei :           3
+ Charges on centers
+  1    1.000000
+  2    1.000000
+  3    0.000000
+ Cartesian coordinates (Angstrom)
+  1    0.000000    0.720061   -4.000000
+  2    0.000000   -0.720061   -4.000000
+  3    0.000000    0.000000    0.000000
+ 
+
+ Warning! Small occupation: 13    0.1290E-08
+ Warning! Small occupation: 14    0.4263E-09
+ Warning! Small occupation: 15    0.3325E-09
+ Warning! Small occupation: 16    0.3094E-09
+ Warning! Small occupation: 17    0.3707E-10
+ Warning! Small occupation: 18    0.3514E-10
+ Warning! Small occupation: 19    0.3009E-10
+ Warning! Small occupation: 20    0.2732E-10
+ Warning! Small occupation: 21    0.7145E-11
+ Warning! Small occupation: 22    0.7513E-12
+ Warning! Small occupation: 23    0.5882E-12
+ Warning! Small occupation: 24    0.2715E-12
+ Warning! Small occupation: 25    0.2174E-12
+ Warning! Small occupation: 26    0.2002E-12
+ Warning! Small occupation: 27    0.1697E-12
+ Monomoner A:           15 orbitals will be treated as virtual
+ Warning! Small occupation: 21    0.5447E-09
+ Warning! Small occupation: 22    0.5447E-09
+ Warning! Small occupation: 23    0.2691E-16
+ Warning! Small occupation: 24    0.1900E-16
+ Warning! Small occupation: 25    0.1286E-17
+ Warning! Small occupation: 26    0.6881E-18
+ Warning! Small occupation: 27    0.1797E-20
+ Monomoner B:            7 orbitals will be treated as virtual
+ ORBITAL OCCUPANCIES
+  Orb   Occupancy-A      Gem-A          Occupancy-B      Gem-B
+   1    0.991735E+00     1              0.498293E+00     1
+   2    0.428742E-02     1              0.498293E+00     1
+   3    0.130094E-02     1              0.766482E-03     1
+   4    0.129410E-02     1              0.766482E-03     1
+   5    0.128962E-02     1              0.448825E-03     1
+   6    0.269786E-04     1              0.448825E-03     1
+   7    0.268764E-04     1              0.437734E-03     1
+   8    0.268727E-04     1              0.437734E-03     1
+   9    0.122982E-04     1              0.325296E-04     1
+  10    0.628241E-07     1              0.325296E-04     1
+  11    0.552859E-07     1              0.826297E-05     1
+  12    0.126132E-08     1              0.826297E-05     1
+  13    0.644993E-09     1              0.799398E-05     1
+  14    0.213152E-09     1              0.799398E-05     1
+  15    0.166272E-09     1              0.456407E-05     1
+  16    0.154681E-09     1              0.456407E-05     1
+  17    0.185375E-10     1              0.271332E-06     1
+  18    0.175715E-10     1              0.271332E-06     1
+  19    0.150459E-10     1              0.827969E-07     1
+  20    0.136604E-10     1              0.827969E-07     1
+  21    0.357226E-11     1              0.272374E-09     1
+  22    0.375625E-12     1              0.272374E-09     1
+  23    0.294096E-12     1              0.134557E-16     1
+  24    0.135762E-12     1              0.950191E-17     1
+  25    0.108707E-12     1              0.643024E-18     1
+  26    0.100083E-12     1              0.344075E-18     1
+  27    0.848596E-13     1              0.898265E-21     1
+
+
+ Number of basis functions:                        27
+ Number of independent pairs:                     378
+ Number of columns in segment:                    378
+ Number of passes:                                  1
+ Use TREXIO INTS SORTER
+
+ CPU  time in 2ints                is                0.014 s
+ Wall time in 2ints                is                0.014 s
+ WIP: do we really need a separate procedure for TREXIO?
+      it would maybe make more sense to set RDMType CI?
+      or split: select_active_gvb/cas/ci? 
+
+ Monomer A
+ Active Orbital:    1    0.9917E+00
+ Active Orbital:    2    0.4287E-02
+ Active Orbital:    3    0.1301E-02
+ Active Orbital:    4    0.1294E-02
+ Active Orbital:    5    0.1290E-02
+ Active Orbital:    6    0.2698E-04
+ Active Orbital:    7    0.2688E-04
+ Active Orbital:    8    0.2687E-04
+ Active Orbital:    9    0.1230E-04
+ Active Orbital:   10    0.6282E-07
+ Active Orbital:   11    0.5529E-07
+ Active Orbital:   12    0.1261E-08
+
+ TREXIO-num:
+ num0 (inactive)   0
+ num1   (active)  12
+ num2  (virtual)  15
+
+ maybe better call ThrSelAct : Threshold for nearly degenerate pairs?
+ Threshold for active orbital pairs:           0.10000E-07
+ Threshold for quasi-virtual orbital pairs:    0.10000E-06
+ Threshold for selecting active orbitals:      0.10000E-08 < Active <  0.10000E+01
+ Warning! For single atom ThrSelAct should probably have larger value!
+ Discarding nearly virtual-orbitals pair    12  10
+ Discarding nearly virtual-orbitals pair    12  11
+ Discarding nearly virtual-orbitals pair    13  10
+ Discarding nearly virtual-orbitals pair    13  11
+ Discarding nearly virtual-orbitals pair    13  12
+ Discarding nearly virtual-orbitals pair    14  10
+ Discarding nearly virtual-orbitals pair    14  11
+ Discarding nearly virtual-orbitals pair    14  12
+ Discarding nearly virtual-orbitals pair    15  10
+ Discarding nearly virtual-orbitals pair    15  11
+ Discarding nearly virtual-orbitals pair    15  12
+ Discarding nearly virtual-orbitals pair    16  10
+ Discarding nearly virtual-orbitals pair    16  11
+ Discarding nearly virtual-orbitals pair    16  12
+ Discarding nearly virtual-orbitals pair    17  10
+ Discarding nearly virtual-orbitals pair    17  11
+ Discarding nearly virtual-orbitals pair    17  12
+ Discarding nearly virtual-orbitals pair    18  10
+ Discarding nearly virtual-orbitals pair    18  11
+ Discarding nearly virtual-orbitals pair    18  12
+ Discarding nearly virtual-orbitals pair    19  10
+ Discarding nearly virtual-orbitals pair    19  11
+ Discarding nearly virtual-orbitals pair    19  12
+ Discarding nearly virtual-orbitals pair    20  10
+ Discarding nearly virtual-orbitals pair    20  11
+ Discarding nearly virtual-orbitals pair    20  12
+ Discarding nearly virtual-orbitals pair    21  10
+ Discarding nearly virtual-orbitals pair    21  11
+ Discarding nearly virtual-orbitals pair    21  12
+ Discarding nearly virtual-orbitals pair    22  10
+ Discarding nearly virtual-orbitals pair    22  11
+ Discarding nearly virtual-orbitals pair    22  12
+ Discarding nearly virtual-orbitals pair    23  10
+ Discarding nearly virtual-orbitals pair    23  11
+ Discarding nearly virtual-orbitals pair    23  12
+ Discarding nearly virtual-orbitals pair    24  10
+ Discarding nearly virtual-orbitals pair    24  11
+ Discarding nearly virtual-orbitals pair    24  12
+ Discarding nearly virtual-orbitals pair    25  10
+ Discarding nearly virtual-orbitals pair    25  11
+ Discarding nearly virtual-orbitals pair    25  12
+ Discarding nearly virtual-orbitals pair    26  10
+ Discarding nearly virtual-orbitals pair    26  11
+ Discarding nearly virtual-orbitals pair    26  12
+ Discarding nearly virtual-orbitals pair    27  10
+ Discarding nearly virtual-orbitals pair    27  11
+ Discarding nearly virtual-orbitals pair    27  12
+ WIP: do we really need a separate procedure for TREXIO?
+      it would maybe make more sense to set RDMType CI?
+      or split: select_active_gvb/cas/ci? 
+
+ Monomer B
+ Active Orbital:    1    0.4983E+00
+ Active Orbital:    2    0.4983E+00
+ Active Orbital:    3    0.7665E-03
+ Active Orbital:    4    0.7665E-03
+ Active Orbital:    5    0.4488E-03
+ Active Orbital:    6    0.4488E-03
+ Active Orbital:    7    0.4377E-03
+ Active Orbital:    8    0.4377E-03
+ Active Orbital:    9    0.3253E-04
+ Active Orbital:   10    0.3253E-04
+ Active Orbital:   11    0.8263E-05
+ Active Orbital:   12    0.8263E-05
+ Active Orbital:   13    0.7994E-05
+ Active Orbital:   14    0.7994E-05
+ Active Orbital:   15    0.4564E-05
+ Active Orbital:   16    0.4564E-05
+ Active Orbital:   17    0.2713E-06
+ Active Orbital:   18    0.2713E-06
+ Active Orbital:   19    0.8280E-07
+ Active Orbital:   20    0.8280E-07
+
+ TREXIO-num:
+ num0 (inactive)   0
+ num1   (active)  20
+ num2  (virtual)   7
+
+ maybe better call ThrSelAct : Threshold for nearly degenerate pairs?
+ Threshold for active orbital pairs:           0.10000E-07
+ Threshold for quasi-virtual orbital pairs:    0.10000E-06
+ Threshold for selecting active orbitals:      0.10000E-08 < Active <  0.10000E+01
+ Discarding nearly degenerate pair     2   1
+ Discarding nearly degenerate pair     4   3
+ Discarding nearly degenerate pair     6   5
+ Discarding nearly degenerate pair     8   7
+ Discarding nearly degenerate pair    10   9
+ Discarding nearly degenerate pair    12  11
+ Discarding nearly degenerate pair    14  13
+ Discarding nearly degenerate pair    16  15
+ Discarding nearly degenerate pair    18  17
+ Discarding nearly degenerate pair    20  19
+ Discarding nearly virtual-orbitals pair    21  19
+ Discarding nearly virtual-orbitals pair    21  20
+ Discarding nearly virtual-orbitals pair    22  19
+ Discarding nearly virtual-orbitals pair    22  20
+ Discarding nearly virtual-orbitals pair    23  19
+ Discarding nearly virtual-orbitals pair    23  20
+ Discarding nearly virtual-orbitals pair    24  19
+ Discarding nearly virtual-orbitals pair    24  20
+ Discarding nearly virtual-orbitals pair    25  19
+ Discarding nearly virtual-orbitals pair    25  20
+ Discarding nearly virtual-orbitals pair    26  19
+ Discarding nearly virtual-orbitals pair    26  20
+ Discarding nearly virtual-orbitals pair    27  19
+ Discarding nearly virtual-orbitals pair    27  20
+
+ WIP1: use 3-ind transformation for 2-RDMs!
+ WIP2: can the matrix be read-in and 3-indx transformed in batches? (rw_trexio_rdm2)
+ Number of Cholesky 2-RDM vectors     1
+ (compared to          729 )
+
+ Monomer A
+ 2-RDM2 norm =     1.000000 (reference =   1.000)
+ FCI RDM2 TRANSFORMATION TO NO IN PROCESS...
+ 2-RDM dim for monomer 1 truncated from NBasis =  27 to NOccup =  12
+ according to the 0.100000E-08 threshold (ThrAct)
+
+ WIP1: use 3-ind transformation for 2-RDMs!
+ WIP2: can the matrix be read-in and 3-indx transformed in batches? (rw_trexio_rdm2)
+ Number of Cholesky 2-RDM vectors     1
+ (compared to          729 )
+
+ Monomer B
+ 2-RDM2 norm =     1.000000 (reference =   1.000)
+ FCI RDM2 TRANSFORMATION TO NO IN PROCESS...
+ 2-RDM dim for monomer 2 truncated from NBasis =  27 to NOccup =  20
+ according to the 0.100000E-08 threshold (ThrAct)
+
+                           Monomer A    Monomer B
+ Active orbital:    1    0.9917E+00    0.4983E+00
+ Active orbital:    2    0.4287E-02    0.4983E+00
+ Active orbital:    3    0.1301E-02    0.7665E-03
+ Active orbital:    4    0.1294E-02    0.7665E-03
+ Active orbital:    5    0.1290E-02    0.4488E-03
+ Active orbital:    6    0.2698E-04    0.4488E-03
+ Active orbital:    7    0.2688E-04    0.4377E-03
+ Active orbital:    8    0.2687E-04    0.4377E-03
+ Active orbital:    9    0.1230E-04    0.3253E-04
+ Active orbital:   10    0.6282E-07    0.3253E-04
+ Active orbital:   11    0.5529E-07    0.8263E-05
+ Active orbital:   12    0.1261E-08    0.8263E-05
+ Active orbital:   13                  0.7994E-05
+ Active orbital:   14                  0.7994E-05
+ Active orbital:   15                  0.4564E-05
+ Active orbital:   16                  0.4564E-05
+ Active orbital:   17                  0.2713E-06
+ Active orbital:   18                  0.2713E-06
+ Active orbital:   19                  0.8280E-07
+ Active orbital:   20                  0.8280E-07
+ ------------------------------------------------
+ Total Active:                12          20
+
+                          Monomer A     Monomer B
+ Total number of pairs:      351           351
+ Reduced to:                199           306
+
+
+  Accepted pairs:
+  p  q           Monomer A                            MonomerB
+  --------------------------------     --------------------------------
+  2  1    0.4287E-02    0.9917E+00     3  1    0.7665E-03    0.4983E+00
+  3  1    0.1301E-02    0.9917E+00     3  2    0.7665E-03    0.4983E+00
+  3  2    0.1301E-02    0.4287E-02     4  1    0.7665E-03    0.4983E+00
+  4  1    0.1294E-02    0.9917E+00     4  2    0.7665E-03    0.4983E+00
+  4  2    0.1294E-02    0.4287E-02     5  1    0.4488E-03    0.4983E+00
+  4  3    0.1294E-02    0.1301E-02     5  2    0.4488E-03    0.4983E+00
+  5  1    0.1290E-02    0.9917E+00     5  3    0.4488E-03    0.7665E-03
+  5  2    0.1290E-02    0.4287E-02     5  4    0.4488E-03    0.7665E-03
+  5  3    0.1290E-02    0.1301E-02     6  1    0.4488E-03    0.4983E+00
+  5  4    0.1290E-02    0.1294E-02     6  2    0.4488E-03    0.4983E+00
+  6  1    0.2698E-04    0.9917E+00     6  3    0.4488E-03    0.7665E-03
+  6  2    0.2698E-04    0.4287E-02     6  4    0.4488E-03    0.7665E-03
+  6  3    0.2698E-04    0.1301E-02     7  1    0.4377E-03    0.4983E+00
+  6  4    0.2698E-04    0.1294E-02     7  2    0.4377E-03    0.4983E+00
+  6  5    0.2698E-04    0.1290E-02     7  3    0.4377E-03    0.7665E-03
+  7  1    0.2688E-04    0.9917E+00     7  4    0.4377E-03    0.7665E-03
+  7  2    0.2688E-04    0.4287E-02     7  5    0.4377E-03    0.4488E-03
+  7  3    0.2688E-04    0.1301E-02     7  6    0.4377E-03    0.4488E-03
+  7  4    0.2688E-04    0.1294E-02     8  1    0.4377E-03    0.4983E+00
+  7  5    0.2688E-04    0.1290E-02     8  2    0.4377E-03    0.4983E+00
+  7  6    0.2688E-04    0.2698E-04     8  3    0.4377E-03    0.7665E-03
+  8  1    0.2687E-04    0.9917E+00     8  4    0.4377E-03    0.7665E-03
+  8  2    0.2687E-04    0.4287E-02     8  5    0.4377E-03    0.4488E-03
+  8  3    0.2687E-04    0.1301E-02     8  6    0.4377E-03    0.4488E-03
+  8  4    0.2687E-04    0.1294E-02     9  1    0.3253E-04    0.4983E+00
+  8  5    0.2687E-04    0.1290E-02     9  2    0.3253E-04    0.4983E+00
+  8  6    0.2687E-04    0.2698E-04     9  3    0.3253E-04    0.7665E-03
+  8  7    0.2687E-04    0.2688E-04     9  4    0.3253E-04    0.7665E-03
+  9  1    0.1230E-04    0.9917E+00     9  5    0.3253E-04    0.4488E-03
+  9  2    0.1230E-04    0.4287E-02     9  6    0.3253E-04    0.4488E-03
+  9  3    0.1230E-04    0.1301E-02     9  7    0.3253E-04    0.4377E-03
+  9  4    0.1230E-04    0.1294E-02     9  8    0.3253E-04    0.4377E-03
+  9  5    0.1230E-04    0.1290E-02    10  1    0.3253E-04    0.4983E+00
+  9  6    0.1230E-04    0.2698E-04    10  2    0.3253E-04    0.4983E+00
+  9  7    0.1230E-04    0.2688E-04    10  3    0.3253E-04    0.7665E-03
+  9  8    0.1230E-04    0.2687E-04    10  4    0.3253E-04    0.7665E-03
+ 10  1    0.6282E-07    0.9917E+00    10  5    0.3253E-04    0.4488E-03
+ 10  2    0.6282E-07    0.4287E-02    10  6    0.3253E-04    0.4488E-03
+ 10  3    0.6282E-07    0.1301E-02    10  7    0.3253E-04    0.4377E-03
+ 10  4    0.6282E-07    0.1294E-02    10  8    0.3253E-04    0.4377E-03
+ 10  5    0.6282E-07    0.1290E-02    11  1    0.8263E-05    0.4983E+00
+ 10  6    0.6282E-07    0.2698E-04    11  2    0.8263E-05    0.4983E+00
+ 10  7    0.6282E-07    0.2688E-04    11  3    0.8263E-05    0.7665E-03
+ 10  8    0.6282E-07    0.2687E-04    11  4    0.8263E-05    0.7665E-03
+ 10  9    0.6282E-07    0.1230E-04    11  5    0.8263E-05    0.4488E-03
+ 11  1    0.5529E-07    0.9917E+00    11  6    0.8263E-05    0.4488E-03
+ 11  2    0.5529E-07    0.4287E-02    11  7    0.8263E-05    0.4377E-03
+ 11  3    0.5529E-07    0.1301E-02    11  8    0.8263E-05    0.4377E-03
+ 11  4    0.5529E-07    0.1294E-02    11  9    0.8263E-05    0.3253E-04
+ 11  5    0.5529E-07    0.1290E-02    11 10    0.8263E-05    0.3253E-04
+ 11  6    0.5529E-07    0.2698E-04    12  1    0.8263E-05    0.4983E+00
+ 11  7    0.5529E-07    0.2688E-04    12  2    0.8263E-05    0.4983E+00
+ 11  8    0.5529E-07    0.2687E-04    12  3    0.8263E-05    0.7665E-03
+ 11  9    0.5529E-07    0.1230E-04    12  4    0.8263E-05    0.7665E-03
+ 11 10    0.5529E-07    0.6282E-07    12  5    0.8263E-05    0.4488E-03
+ 12  1    0.1261E-08    0.9917E+00    12  6    0.8263E-05    0.4488E-03
+ 12  2    0.1261E-08    0.4287E-02    12  7    0.8263E-05    0.4377E-03
+ 12  3    0.1261E-08    0.1301E-02    12  8    0.8263E-05    0.4377E-03
+ 12  4    0.1261E-08    0.1294E-02    12  9    0.8263E-05    0.3253E-04
+ 12  5    0.1261E-08    0.1290E-02    12 10    0.8263E-05    0.3253E-04
+ 12  6    0.1261E-08    0.2698E-04    13  1    0.7994E-05    0.4983E+00
+ 12  7    0.1261E-08    0.2688E-04    13  2    0.7994E-05    0.4983E+00
+ 12  8    0.1261E-08    0.2687E-04    13  3    0.7994E-05    0.7665E-03
+ 12  9    0.1261E-08    0.1230E-04    13  4    0.7994E-05    0.7665E-03
+ 13  1    0.6450E-09    0.9917E+00    13  5    0.7994E-05    0.4488E-03
+ 13  2    0.6450E-09    0.4287E-02    13  6    0.7994E-05    0.4488E-03
+ 13  3    0.6450E-09    0.1301E-02    13  7    0.7994E-05    0.4377E-03
+ 13  4    0.6450E-09    0.1294E-02    13  8    0.7994E-05    0.4377E-03
+ 13  5    0.6450E-09    0.1290E-02    13  9    0.7994E-05    0.3253E-04
+ 13  6    0.6450E-09    0.2698E-04    13 10    0.7994E-05    0.3253E-04
+ 13  7    0.6450E-09    0.2688E-04    13 11    0.7994E-05    0.8263E-05
+ 13  8    0.6450E-09    0.2687E-04    13 12    0.7994E-05    0.8263E-05
+ 13  9    0.6450E-09    0.1230E-04    14  1    0.7994E-05    0.4983E+00
+ 14  1    0.2132E-09    0.9917E+00    14  2    0.7994E-05    0.4983E+00
+ 14  2    0.2132E-09    0.4287E-02    14  3    0.7994E-05    0.7665E-03
+ 14  3    0.2132E-09    0.1301E-02    14  4    0.7994E-05    0.7665E-03
+ 14  4    0.2132E-09    0.1294E-02    14  5    0.7994E-05    0.4488E-03
+ 14  5    0.2132E-09    0.1290E-02    14  6    0.7994E-05    0.4488E-03
+ 14  6    0.2132E-09    0.2698E-04    14  7    0.7994E-05    0.4377E-03
+ 14  7    0.2132E-09    0.2688E-04    14  8    0.7994E-05    0.4377E-03
+ 14  8    0.2132E-09    0.2687E-04    14  9    0.7994E-05    0.3253E-04
+ 14  9    0.2132E-09    0.1230E-04    14 10    0.7994E-05    0.3253E-04
+ 15  1    0.1663E-09    0.9917E+00    14 11    0.7994E-05    0.8263E-05
+ 15  2    0.1663E-09    0.4287E-02    14 12    0.7994E-05    0.8263E-05
+ 15  3    0.1663E-09    0.1301E-02    15  1    0.4564E-05    0.4983E+00
+ 15  4    0.1663E-09    0.1294E-02    15  2    0.4564E-05    0.4983E+00
+ 15  5    0.1663E-09    0.1290E-02    15  3    0.4564E-05    0.7665E-03
+ 15  6    0.1663E-09    0.2698E-04    15  4    0.4564E-05    0.7665E-03
+ 15  7    0.1663E-09    0.2688E-04    15  5    0.4564E-05    0.4488E-03
+ 15  8    0.1663E-09    0.2687E-04    15  6    0.4564E-05    0.4488E-03
+ 15  9    0.1663E-09    0.1230E-04    15  7    0.4564E-05    0.4377E-03
+ 16  1    0.1547E-09    0.9917E+00    15  8    0.4564E-05    0.4377E-03
+ 16  2    0.1547E-09    0.4287E-02    15  9    0.4564E-05    0.3253E-04
+ 16  3    0.1547E-09    0.1301E-02    15 10    0.4564E-05    0.3253E-04
+ 16  4    0.1547E-09    0.1294E-02    15 11    0.4564E-05    0.8263E-05
+ 16  5    0.1547E-09    0.1290E-02    15 12    0.4564E-05    0.8263E-05
+ 16  6    0.1547E-09    0.2698E-04    15 13    0.4564E-05    0.7994E-05
+ 16  7    0.1547E-09    0.2688E-04    15 14    0.4564E-05    0.7994E-05
+ 16  8    0.1547E-09    0.2687E-04    16  1    0.4564E-05    0.4983E+00
+ 16  9    0.1547E-09    0.1230E-04    16  2    0.4564E-05    0.4983E+00
+ 17  1    0.1854E-10    0.9917E+00    16  3    0.4564E-05    0.7665E-03
+ 17  2    0.1854E-10    0.4287E-02    16  4    0.4564E-05    0.7665E-03
+ 17  3    0.1854E-10    0.1301E-02    16  5    0.4564E-05    0.4488E-03
+ 17  4    0.1854E-10    0.1294E-02    16  6    0.4564E-05    0.4488E-03
+ 17  5    0.1854E-10    0.1290E-02    16  7    0.4564E-05    0.4377E-03
+ 17  6    0.1854E-10    0.2698E-04    16  8    0.4564E-05    0.4377E-03
+ 17  7    0.1854E-10    0.2688E-04    16  9    0.4564E-05    0.3253E-04
+ 17  8    0.1854E-10    0.2687E-04    16 10    0.4564E-05    0.3253E-04
+ 17  9    0.1854E-10    0.1230E-04    16 11    0.4564E-05    0.8263E-05
+ 18  1    0.1757E-10    0.9917E+00    16 12    0.4564E-05    0.8263E-05
+ 18  2    0.1757E-10    0.4287E-02    16 13    0.4564E-05    0.7994E-05
+ 18  3    0.1757E-10    0.1301E-02    16 14    0.4564E-05    0.7994E-05
+ 18  4    0.1757E-10    0.1294E-02    17  1    0.2713E-06    0.4983E+00
+ 18  5    0.1757E-10    0.1290E-02    17  2    0.2713E-06    0.4983E+00
+ 18  6    0.1757E-10    0.2698E-04    17  3    0.2713E-06    0.7665E-03
+ 18  7    0.1757E-10    0.2688E-04    17  4    0.2713E-06    0.7665E-03
+ 18  8    0.1757E-10    0.2687E-04    17  5    0.2713E-06    0.4488E-03
+ 18  9    0.1757E-10    0.1230E-04    17  6    0.2713E-06    0.4488E-03
+ 19  1    0.1505E-10    0.9917E+00    17  7    0.2713E-06    0.4377E-03
+ 19  2    0.1505E-10    0.4287E-02    17  8    0.2713E-06    0.4377E-03
+ 19  3    0.1505E-10    0.1301E-02    17  9    0.2713E-06    0.3253E-04
+ 19  4    0.1505E-10    0.1294E-02    17 10    0.2713E-06    0.3253E-04
+ 19  5    0.1505E-10    0.1290E-02    17 11    0.2713E-06    0.8263E-05
+ 19  6    0.1505E-10    0.2698E-04    17 12    0.2713E-06    0.8263E-05
+ 19  7    0.1505E-10    0.2688E-04    17 13    0.2713E-06    0.7994E-05
+ 19  8    0.1505E-10    0.2687E-04    17 14    0.2713E-06    0.7994E-05
+ 19  9    0.1505E-10    0.1230E-04    17 15    0.2713E-06    0.4564E-05
+ 20  1    0.1366E-10    0.9917E+00    17 16    0.2713E-06    0.4564E-05
+ 20  2    0.1366E-10    0.4287E-02    18  1    0.2713E-06    0.4983E+00
+ 20  3    0.1366E-10    0.1301E-02    18  2    0.2713E-06    0.4983E+00
+ 20  4    0.1366E-10    0.1294E-02    18  3    0.2713E-06    0.7665E-03
+ 20  5    0.1366E-10    0.1290E-02    18  4    0.2713E-06    0.7665E-03
+ 20  6    0.1366E-10    0.2698E-04    18  5    0.2713E-06    0.4488E-03
+ 20  7    0.1366E-10    0.2688E-04    18  6    0.2713E-06    0.4488E-03
+ 20  8    0.1366E-10    0.2687E-04    18  7    0.2713E-06    0.4377E-03
+ 20  9    0.1366E-10    0.1230E-04    18  8    0.2713E-06    0.4377E-03
+ 21  1    0.3572E-11    0.9917E+00    18  9    0.2713E-06    0.3253E-04
+ 21  2    0.3572E-11    0.4287E-02    18 10    0.2713E-06    0.3253E-04
+ 21  3    0.3572E-11    0.1301E-02    18 11    0.2713E-06    0.8263E-05
+ 21  4    0.3572E-11    0.1294E-02    18 12    0.2713E-06    0.8263E-05
+ 21  5    0.3572E-11    0.1290E-02    18 13    0.2713E-06    0.7994E-05
+ 21  6    0.3572E-11    0.2698E-04    18 14    0.2713E-06    0.7994E-05
+ 21  7    0.3572E-11    0.2688E-04    18 15    0.2713E-06    0.4564E-05
+ 21  8    0.3572E-11    0.2687E-04    18 16    0.2713E-06    0.4564E-05
+ 21  9    0.3572E-11    0.1230E-04    19  1    0.8280E-07    0.4983E+00
+ 22  1    0.3756E-12    0.9917E+00    19  2    0.8280E-07    0.4983E+00
+ 22  2    0.3756E-12    0.4287E-02    19  3    0.8280E-07    0.7665E-03
+ 22  3    0.3756E-12    0.1301E-02    19  4    0.8280E-07    0.7665E-03
+ 22  4    0.3756E-12    0.1294E-02    19  5    0.8280E-07    0.4488E-03
+ 22  5    0.3756E-12    0.1290E-02    19  6    0.8280E-07    0.4488E-03
+ 22  6    0.3756E-12    0.2698E-04    19  7    0.8280E-07    0.4377E-03
+ 22  7    0.3756E-12    0.2688E-04    19  8    0.8280E-07    0.4377E-03
+ 22  8    0.3756E-12    0.2687E-04    19  9    0.8280E-07    0.3253E-04
+ 22  9    0.3756E-12    0.1230E-04    19 10    0.8280E-07    0.3253E-04
+ 23  1    0.2941E-12    0.9917E+00    19 11    0.8280E-07    0.8263E-05
+ 23  2    0.2941E-12    0.4287E-02    19 12    0.8280E-07    0.8263E-05
+ 23  3    0.2941E-12    0.1301E-02    19 13    0.8280E-07    0.7994E-05
+ 23  4    0.2941E-12    0.1294E-02    19 14    0.8280E-07    0.7994E-05
+ 23  5    0.2941E-12    0.1290E-02    19 15    0.8280E-07    0.4564E-05
+ 23  6    0.2941E-12    0.2698E-04    19 16    0.8280E-07    0.4564E-05
+ 23  7    0.2941E-12    0.2688E-04    19 17    0.8280E-07    0.2713E-06
+ 23  8    0.2941E-12    0.2687E-04    19 18    0.8280E-07    0.2713E-06
+ 23  9    0.2941E-12    0.1230E-04    20  1    0.8280E-07    0.4983E+00
+ 24  1    0.1358E-12    0.9917E+00    20  2    0.8280E-07    0.4983E+00
+ 24  2    0.1358E-12    0.4287E-02    20  3    0.8280E-07    0.7665E-03
+ 24  3    0.1358E-12    0.1301E-02    20  4    0.8280E-07    0.7665E-03
+ 24  4    0.1358E-12    0.1294E-02    20  5    0.8280E-07    0.4488E-03
+ 24  5    0.1358E-12    0.1290E-02    20  6    0.8280E-07    0.4488E-03
+ 24  6    0.1358E-12    0.2698E-04    20  7    0.8280E-07    0.4377E-03
+ 24  7    0.1358E-12    0.2688E-04    20  8    0.8280E-07    0.4377E-03
+ 24  8    0.1358E-12    0.2687E-04    20  9    0.8280E-07    0.3253E-04
+ 24  9    0.1358E-12    0.1230E-04    20 10    0.8280E-07    0.3253E-04
+ 25  1    0.1087E-12    0.9917E+00    20 11    0.8280E-07    0.8263E-05
+ 25  2    0.1087E-12    0.4287E-02    20 12    0.8280E-07    0.8263E-05
+ 25  3    0.1087E-12    0.1301E-02    20 13    0.8280E-07    0.7994E-05
+ 25  4    0.1087E-12    0.1294E-02    20 14    0.8280E-07    0.7994E-05
+ 25  5    0.1087E-12    0.1290E-02    20 15    0.8280E-07    0.4564E-05
+ 25  6    0.1087E-12    0.2698E-04    20 16    0.8280E-07    0.4564E-05
+ 25  7    0.1087E-12    0.2688E-04    20 17    0.8280E-07    0.2713E-06
+ 25  8    0.1087E-12    0.2687E-04    20 18    0.8280E-07    0.2713E-06
+ 25  9    0.1087E-12    0.1230E-04    21  1    0.2724E-09    0.4983E+00
+ 26  1    0.1001E-12    0.9917E+00    21  2    0.2724E-09    0.4983E+00
+ 26  2    0.1001E-12    0.4287E-02    21  3    0.2724E-09    0.7665E-03
+ 26  3    0.1001E-12    0.1301E-02    21  4    0.2724E-09    0.7665E-03
+ 26  4    0.1001E-12    0.1294E-02    21  5    0.2724E-09    0.4488E-03
+ 26  5    0.1001E-12    0.1290E-02    21  6    0.2724E-09    0.4488E-03
+ 26  6    0.1001E-12    0.2698E-04    21  7    0.2724E-09    0.4377E-03
+ 26  7    0.1001E-12    0.2688E-04    21  8    0.2724E-09    0.4377E-03
+ 26  8    0.1001E-12    0.2687E-04    21  9    0.2724E-09    0.3253E-04
+ 26  9    0.1001E-12    0.1230E-04    21 10    0.2724E-09    0.3253E-04
+ 27  1    0.8486E-13    0.9917E+00    21 11    0.2724E-09    0.8263E-05
+ 27  2    0.8486E-13    0.4287E-02    21 12    0.2724E-09    0.8263E-05
+ 27  3    0.8486E-13    0.1301E-02    21 13    0.2724E-09    0.7994E-05
+ 27  4    0.8486E-13    0.1294E-02    21 14    0.2724E-09    0.7994E-05
+ 27  5    0.8486E-13    0.1290E-02    21 15    0.2724E-09    0.4564E-05
+ 27  6    0.8486E-13    0.2698E-04    21 16    0.2724E-09    0.4564E-05
+ 27  7    0.8486E-13    0.2688E-04    21 17    0.2724E-09    0.2713E-06
+ 27  8    0.8486E-13    0.2687E-04    21 18    0.2724E-09    0.2713E-06
+ 27  9    0.8486E-13    0.1230E-04    22  1    0.2724E-09    0.4983E+00
+                                      22  2    0.2724E-09    0.4983E+00
+                                      22  3    0.2724E-09    0.7665E-03
+                                      22  4    0.2724E-09    0.7665E-03
+                                      22  5    0.2724E-09    0.4488E-03
+                                      22  6    0.2724E-09    0.4488E-03
+                                      22  7    0.2724E-09    0.4377E-03
+                                      22  8    0.2724E-09    0.4377E-03
+                                      22  9    0.2724E-09    0.3253E-04
+                                      22 10    0.2724E-09    0.3253E-04
+                                      22 11    0.2724E-09    0.8263E-05
+                                      22 12    0.2724E-09    0.8263E-05
+                                      22 13    0.2724E-09    0.7994E-05
+                                      22 14    0.2724E-09    0.7994E-05
+                                      22 15    0.2724E-09    0.4564E-05
+                                      22 16    0.2724E-09    0.4564E-05
+                                      22 17    0.2724E-09    0.2713E-06
+                                      22 18    0.2724E-09    0.2713E-06
+                                      23  1    0.1346E-16    0.4983E+00
+                                      23  2    0.1346E-16    0.4983E+00
+                                      23  3    0.1346E-16    0.7665E-03
+                                      23  4    0.1346E-16    0.7665E-03
+                                      23  5    0.1346E-16    0.4488E-03
+                                      23  6    0.1346E-16    0.4488E-03
+                                      23  7    0.1346E-16    0.4377E-03
+                                      23  8    0.1346E-16    0.4377E-03
+                                      23  9    0.1346E-16    0.3253E-04
+                                      23 10    0.1346E-16    0.3253E-04
+                                      23 11    0.1346E-16    0.8263E-05
+                                      23 12    0.1346E-16    0.8263E-05
+                                      23 13    0.1346E-16    0.7994E-05
+                                      23 14    0.1346E-16    0.7994E-05
+                                      23 15    0.1346E-16    0.4564E-05
+                                      23 16    0.1346E-16    0.4564E-05
+                                      23 17    0.1346E-16    0.2713E-06
+                                      23 18    0.1346E-16    0.2713E-06
+                                      24  1    0.9502E-17    0.4983E+00
+                                      24  2    0.9502E-17    0.4983E+00
+                                      24  3    0.9502E-17    0.7665E-03
+                                      24  4    0.9502E-17    0.7665E-03
+                                      24  5    0.9502E-17    0.4488E-03
+                                      24  6    0.9502E-17    0.4488E-03
+                                      24  7    0.9502E-17    0.4377E-03
+                                      24  8    0.9502E-17    0.4377E-03
+                                      24  9    0.9502E-17    0.3253E-04
+                                      24 10    0.9502E-17    0.3253E-04
+                                      24 11    0.9502E-17    0.8263E-05
+                                      24 12    0.9502E-17    0.8263E-05
+                                      24 13    0.9502E-17    0.7994E-05
+                                      24 14    0.9502E-17    0.7994E-05
+                                      24 15    0.9502E-17    0.4564E-05
+                                      24 16    0.9502E-17    0.4564E-05
+                                      24 17    0.9502E-17    0.2713E-06
+                                      24 18    0.9502E-17    0.2713E-06
+                                      25  1    0.6430E-18    0.4983E+00
+                                      25  2    0.6430E-18    0.4983E+00
+                                      25  3    0.6430E-18    0.7665E-03
+                                      25  4    0.6430E-18    0.7665E-03
+                                      25  5    0.6430E-18    0.4488E-03
+                                      25  6    0.6430E-18    0.4488E-03
+                                      25  7    0.6430E-18    0.4377E-03
+                                      25  8    0.6430E-18    0.4377E-03
+                                      25  9    0.6430E-18    0.3253E-04
+                                      25 10    0.6430E-18    0.3253E-04
+                                      25 11    0.6430E-18    0.8263E-05
+                                      25 12    0.6430E-18    0.8263E-05
+                                      25 13    0.6430E-18    0.7994E-05
+                                      25 14    0.6430E-18    0.7994E-05
+                                      25 15    0.6430E-18    0.4564E-05
+                                      25 16    0.6430E-18    0.4564E-05
+                                      25 17    0.6430E-18    0.2713E-06
+                                      25 18    0.6430E-18    0.2713E-06
+                                      26  1    0.3441E-18    0.4983E+00
+                                      26  2    0.3441E-18    0.4983E+00
+                                      26  3    0.3441E-18    0.7665E-03
+                                      26  4    0.3441E-18    0.7665E-03
+                                      26  5    0.3441E-18    0.4488E-03
+                                      26  6    0.3441E-18    0.4488E-03
+                                      26  7    0.3441E-18    0.4377E-03
+                                      26  8    0.3441E-18    0.4377E-03
+                                      26  9    0.3441E-18    0.3253E-04
+                                      26 10    0.3441E-18    0.3253E-04
+                                      26 11    0.3441E-18    0.8263E-05
+                                      26 12    0.3441E-18    0.8263E-05
+                                      26 13    0.3441E-18    0.7994E-05
+                                      26 14    0.3441E-18    0.7994E-05
+                                      26 15    0.3441E-18    0.4564E-05
+                                      26 16    0.3441E-18    0.4564E-05
+                                      26 17    0.3441E-18    0.2713E-06
+                                      26 18    0.3441E-18    0.2713E-06
+                                      27  1    0.8983E-21    0.4983E+00
+                                      27  2    0.8983E-21    0.4983E+00
+                                      27  3    0.8983E-21    0.7665E-03
+                                      27  4    0.8983E-21    0.7665E-03
+                                      27  5    0.8983E-21    0.4488E-03
+                                      27  6    0.8983E-21    0.4488E-03
+                                      27  7    0.8983E-21    0.4377E-03
+                                      27  8    0.8983E-21    0.4377E-03
+                                      27  9    0.8983E-21    0.3253E-04
+                                      27 10    0.8983E-21    0.3253E-04
+                                      27 11    0.8983E-21    0.8263E-05
+                                      27 12    0.8983E-21    0.8263E-05
+                                      27 13    0.8983E-21    0.7994E-05
+                                      27 14    0.8983E-21    0.7994E-05
+                                      27 15    0.8983E-21    0.4564E-05
+                                      27 16    0.8983E-21    0.4564E-05
+                                      27 17    0.8983E-21    0.2713E-06
+                                      27 18    0.8983E-21    0.2713E-06
+ Transforming integrals for FFOOAA
+
+ CPU  time in FFOO                 is                0.004 s
+ Wall time in FFOO                 is                0.004 s
+ Transforming integrals for FOFOAA
+
+ CPU  time in FOFO                 is                0.006 s
+ Wall time in FOFO                 is                0.006 s
+ Transforming integrals for FFOOBB
+
+ CPU  time in FFOO                 is                0.007 s
+ Wall time in FFOO                 is                0.007 s
+ Transforming integrals for FOFOBB
+
+ CPU  time in FOFO                 is                0.010 s
+ Wall time in FOFO                 is                0.011 s
+ calc_resp_cispi --> calc_resp_casgvb?
+ Mon%NAct          12
+ Mon%INAct           0
+ Mon%mon0           0          12
+ CIPSI One-electron Energy             -3.84018435
+ CIPSI Total Energy (w/o ENuc)         -2.88960472
+ ABPLUS   60.6364953010364     
+ ABMIN    60.7180002125437     
+ Solving symmetric eigenvalue equation...
+
+ ERPA EigVec norm  9.97323187
+ ERPA EigVal norm   60.66571005
+ ERPA Eigenvalues (NDimX =  199):
+    1    0.770594
+    2    0.804858
+    3    0.838794
+    4    0.912736
+    5    0.949905
+    6    0.959506
+    7    1.045669
+    8    1.067957
+    9    1.095567
+   10    1.168733
+   11    1.196939
+   12    1.256825
+   13    1.318490
+   14    1.386274
+   15    2.129130
+   16    2.260628
+   17    2.261266
+   18    2.272710
+   19    2.290964
+   20    2.314271
+   21    2.334125
+   22    2.338750
+   23    2.341919
+   24    2.354992
+   25    2.383558
+   26    2.384420
+   27    2.403098
+   28    2.406190
+   29    2.407593
+   30    2.441628
+   31    2.504245
+   32    2.527853
+   33    2.535741
+   34    2.537285
+   35    2.549744
+   36    2.551966
+   37    2.555223
+   38    2.561335
+   39    2.563855
+   40    2.575740
+   41    2.595687
+   42    2.605248
+   43    2.609028
+   44    2.627705
+   45    2.640512
+   46    2.682073
+   47    2.686034
+   48    2.703898
+   49    2.714654
+   50    2.719927
+   51    2.725025
+   52    2.732986
+   53    2.733896
+   54    2.742941
+   55    2.754487
+   56    2.767161
+   57    2.772711
+   58    2.779097
+   59    2.784261
+   60    2.817945
+   61    2.827058
+   62    2.890286
+   63    2.904255
+   64    2.931007
+   65    2.961341
+   66    3.105305
+   67    3.135919
+   68    3.160997
+   69    3.170986
+   70    3.172508
+   71    3.179609
+   72    3.231075
+   73    3.253040
+   74    3.261271
+   75    3.308832
+   76    3.385251
+   77    3.398372
+   78    3.424441
+   79    3.450891
+   80    3.451717
+   81    3.516325
+   82    3.556189
+   83    3.577835
+   84    3.630657
+   85    3.653461
+   86    3.693039
+   87    3.740742
+   88    3.750548
+   89    3.779544
+   90    3.814122
+   91    4.029682
+   92    4.053483
+   93    4.078450
+   94    4.096406
+   95    4.111473
+   96    4.122182
+   97    4.125273
+   98    4.132482
+   99    4.142696
+  100    4.145716
+  101    4.158346
+  102    4.174350
+  103    4.178726
+  104    4.179540
+  105    4.208892
+  106    4.214045
+  107    4.233625
+  108    4.235205
+  109    4.237376
+  110    4.259634
+  111    4.260118
+  112    4.289912
+  113    4.306084
+  114    4.320396
+  115    4.322247
+  116    4.340775
+  117    4.376188
+  118    4.379008
+  119    4.404061
+  120    4.418844
+  121    4.423265
+  122    4.438827
+  123    4.456144
+  124    4.470236
+  125    4.487254
+  126    4.510968
+  127    4.536207
+  128    4.539220
+  129    4.547175
+  130    4.548668
+  131    4.572743
+  132    4.576773
+  133    4.578805
+  134    4.611816
+  135    4.632624
+  136    4.640172
+  137    4.648680
+  138    4.653180
+  139    4.662371
+  140    4.669765
+  141    4.680000
+  142    4.681719
+  143    4.684463
+  144    4.693746
+  145    4.698070
+  146    4.698932
+  147    4.712692
+  148    4.713049
+  149    4.713941
+  150    4.741322
+  151    4.771108
+  152    4.772899
+  153    4.783126
+  154    4.802602
+  155    4.806013
+  156    4.869321
+  157    4.877066
+  158    4.916877
+  159    4.988939
+  160    5.014352
+  161    5.279166
+  162    5.282110
+  163    5.331461
+  164    5.417494
+  165    5.531177
+  166    5.552333
+  167    5.554440
+  168    5.590991
+  169    5.632906
+  170    5.717255
+  171    5.901252
+  172    5.943038
+  173    5.970500
+  174    5.997893
+  175    6.009030
+  176    6.017809
+  177    6.038735
+  178    6.089753
+  179    6.135576
+  180    6.480837
+  181    6.491644
+  182    6.533493
+  183    6.534927
+  184    6.574972
+  185    6.576096
+  186    6.601314
+  187    6.623898
+  188    6.646051
+  189    6.654501
+  190    6.656257
+  191    6.698649
+  192    6.776258
+  193    6.814487
+  194    6.822804
+  195    6.887658
+  196    7.663196
+  197    8.646871
+  198    8.685611
+  199    8.766606
+ calc_resp_cispi --> calc_resp_casgvb?
+ Mon%NAct          20
+ Mon%INAct           0
+ Mon%mon0           0          20
+ CIPSI One-electron Energy             -1.68362543
+ CIPSI Total Energy (w/o ENuc)         -1.40074784
+ ABPLUS   54.6108581896740     
+ ABMIN    81740.2760652693     
+ Solving symmetric eigenvalue equation...
+
+ ERPA EigVec norm 11.57849741
+ ERPA EigVal norm   57.77642273
+ ERPA Eigenvalues (NDimX =  306):
+    1    0.007714
+    2    0.048958
+    3    0.111493
+    4    0.134330
+    5    0.212432
+    6    0.264484
+    7    0.285371
+    8    0.289323
+    9    0.430838
+   10    0.475075
+   11    0.536780
+   12    0.636019
+   13    0.645276
+   14    0.669897
+   15    0.675642
+   16    0.698725
+   17    0.792160
+   18    0.809975
+   19    0.812710
+   20    0.814459
+   21    0.820696
+   22    0.822877
+   23    0.883060
+   24    0.883947
+   25    0.891046
+   26    0.943327
+   27    0.946922
+   28    0.954350
+   29    0.973475
+   30    0.974873
+   31    0.990562
+   32    1.017300
+   33    1.022861
+   34    1.037032
+   35    1.056934
+   36    1.077016
+   37    1.083920
+   38    1.094361
+   39    1.112967
+   40    1.119617
+   41    1.126558
+   42    1.156580
+   43    1.173294
+   44    1.175830
+   45    1.176567
+   46    1.183212
+   47    1.187803
+   48    1.200543
+   49    1.215425
+   50    1.216005
+   51    1.224996
+   52    1.241357
+   53    1.251432
+   54    1.274075
+   55    1.295257
+   56    1.304653
+   57    1.325602
+   58    1.325684
+   59    1.336111
+   60    1.337419
+   61    1.342978
+   62    1.346879
+   63    1.355189
+   64    1.365501
+   65    1.383769
+   66    1.406885
+   67    1.412415
+   68    1.426000
+   69    1.426189
+   70    1.428521
+   71    1.441803
+   72    1.451275
+   73    1.460790
+   74    1.464476
+   75    1.471462
+   76    1.483586
+   77    1.483742
+   78    1.485498
+   79    1.504706
+   80    1.526628
+   81    1.546516
+   82    1.546659
+   83    1.566939
+   84    1.569715
+   85    1.591170
+   86    1.593155
+   87    1.599464
+   88    1.600684
+   89    1.604276
+   90    1.613080
+   91    1.643018
+   92    1.643110
+   93    1.666798
+   94    1.688725
+   95    1.689288
+   96    1.712053
+   97    1.713415
+   98    1.714161
+   99    1.728131
+  100    1.735326
+  101    1.738612
+  102    1.740838
+  103    1.748782
+  104    1.781428
+  105    1.783547
+  106    1.789597
+  107    1.798209
+  108    1.814106
+  109    1.830274
+  110    1.833201
+  111    1.836308
+  112    1.846772
+  113    1.847140
+  114    1.868994
+  115    1.878297
+  116    1.879580
+  117    1.882918
+  118    1.885186
+  119    1.893562
+  120    1.926588
+  121    1.939481
+  122    1.953928
+  123    1.955590
+  124    1.967683
+  125    1.974083
+  126    1.977716
+  127    1.992023
+  128    2.006822
+  129    2.017126
+  130    2.021870
+  131    2.042753
+  132    2.070121
+  133    2.084093
+  134    2.101419
+  135    2.108584
+  136    2.144668
+  137    2.192116
+  138    2.192325
+  139    2.192466
+  140    2.198140
+  141    2.200061
+  142    2.216720
+  143    2.220621
+  144    2.222589
+  145    2.246329
+  146    2.260012
+  147    2.261469
+  148    2.262592
+  149    2.266343
+  150    2.309924
+  151    2.314968
+  152    2.339546
+  153    2.356397
+  154    2.358826
+  155    2.384892
+  156    2.387791
+  157    2.394121
+  158    2.402235
+  159    2.407344
+  160    2.414607
+  161    2.425907
+  162    2.428116
+  163    2.461921
+  164    2.471360
+  165    2.489112
+  166    2.491788
+  167    2.492945
+  168    2.505603
+  169    2.509395
+  170    2.519931
+  171    2.529711
+  172    2.548746
+  173    2.566208
+  174    2.570969
+  175    2.602847
+  176    2.608949
+  177    2.629594
+  178    2.646261
+  179    2.654248
+  180    2.676031
+  181    2.683214
+  182    2.706878
+  183    2.707764
+  184    2.710849
+  185    2.747779
+  186    2.770756
+  187    2.798675
+  188    2.808968
+  189    2.814685
+  190    2.824834
+  191    2.840718
+  192    2.859561
+  193    2.860324
+  194    2.920688
+  195    2.938859
+  196    2.975255
+  197    3.000544
+  198    3.012409
+  199    3.028856
+  200    3.035274
+  201    3.070873
+  202    3.155936
+  203    3.165240
+  204    3.181596
+  205    3.275563
+  206    3.284833
+  207    3.305333
+  208    3.448925
+  209    3.478091
+  210    3.493921
+  211    3.585441
+  212    3.595651
+  213    3.640906
+  214    3.642999
+  215    3.656504
+  216    3.708402
+  217    3.709838
+  218    3.710992
+  219    3.715775
+  220    3.776220
+  221    3.860731
+  222    3.942071
+  223    3.946759
+  224    4.020641
+  225    4.041940
+  226    4.049811
+  227    4.070519
+  228    4.113035
+  229    4.224688
+  230    4.235307
+  231    4.283385
+  232    4.284013
+  233    4.308927
+  234    4.352339
+  235    4.396105
+  236    4.403791
+  237    4.414490
+  238    4.441473
+  239    4.461638
+  240    4.484543
+  241    4.510328
+  242    4.531696
+  243    4.537553
+  244    4.544208
+  245    4.586833
+  246    4.594057
+  247    4.649432
+  248    4.659251
+  249    4.665364
+  250    4.691198
+  251    4.704401
+  252    4.713088
+  253    4.758102
+  254    4.777986
+  255    4.792488
+  256    4.818336
+  257    4.838170
+  258    4.866067
+  259    4.912510
+  260    4.916595
+  261    5.037949
+  262    5.088528
+  263    5.123797
+  264    5.152832
+  265    5.283228
+  266    5.301724
+  267    5.351245
+  268    5.353836
+  269    5.370376
+  270    5.384217
+  271    5.400146
+  272    5.418271
+  273    5.424503
+  274    5.430790
+  275    5.450272
+  276    5.462858
+  277    5.470833
+  278    5.474928
+  279    5.474932
+  280    5.494007
+  281    5.508453
+  282    5.533216
+  283    5.551975
+  284    5.594031
+  285    5.681880
+  286    5.741371
+  287    5.789427
+  288    5.859104
+  289    5.925382
+  290    5.970411
+  291    6.000361
+  292    6.017821
+  293    6.048650
+  294    6.087881
+  295    6.118205
+  296    6.209542
+  297    6.241695
+  298    6.249812
+  299    6.303270
+  300    6.629845
+  301    6.858701
+  302    6.888404
+  303    7.084626
+  304    7.133252
+  305    7.203263
+  306    7.973778
+
+ Transforming E2disp integrals...
+ Transforming integrals for TWOMOAB
+
+ Transforming E2exch-ind integrals...
+ Transforming integrals for FOFOAABB
+ Transforming integrals for FOFOBBBA
+ Transforming integrals for FOFOAAAB
+ Transforming integrals for FFOOABAB
+ Transforming integrals for FOFOBBAB
+ Transforming integrals for FOFOAABA
+
+ Transforming E2exch-disp integrals...
+ Transforming integrals for FOFOABBA
+ Transforming integrals for FFOOABBB
+ Transforming integrals for FFOOBAAA
+ Transforming integrals for TMPOOAB
+
+ V_nucB_elA       =     -0.98419967
+ V_nucA_elB       =     -0.86886437
+ V_elA_elB        =      0.86832493
+ V_nn             =      0.98418071
+
+ Eelst            =     -0.55840407
+ Transforming integrals for TWOA3B
+ Transforming integrals for TWOB3A
+
+ ExchS2(T1   ) =      -0.00164920
+ ExchS2(T2d  ) =      -2.90669304
+ ExchS2(T2c-1) =       3.45495123
+ ExchS2(T2c-2) =       1.07840331
+ ExchS2(T2b-1) =       2.85246891
+ ExchS2(T2b-2) =       1.43971173
+ ExchS2(T2a-1) =      -2.36555135
+ ExchS2(T2a-2) =      -1.48006131
+ ExchS2(T2a-3) =      -0.76067713
+ ExchS2(T2a-4) =      -0.53501735
+
+ ExchS2           =      0.77588582
+
+ Ind(B<--A)     =      -0.06085713
+ Ind(A<--B)     =      -1.01885350
+ E2ind          =      -1.07971063
+
+ Thresholds in E2exch-ind:
+ SmallE          =     0.1000E-02
+ BigE            =     0.1000E+09
+
+ term Z           =     -0.00318883
+ term Y           =     -0.86026543
+ term X           =      0.96232110
+
+ E2exch-ind       =      0.09886684
+
+ Thresholds in E2disp:
+ SmallE      =       0.1000E-03
+ BigE        =       0.1000E+09
+
+ E2disp       =      -1.07613545
+
+ Thresholds in E2exch-disp:
+ SmallE          =     0.1000E-02
+ BigE            =     0.1000E+09
+
+ term Z           =     -0.00317827
+ term X           =     -1.01715307
+ term Y           =      1.01688433
+
+ E2exch-disp      =     -0.00344701
+
+****************************************
+ SAPT SUMMARY / milliHartree
+****************************************
+ Interface   = TREXIO  
+ SAPT level  =  2
+ E1elst           =     -0.55840407
+ E1exch(S2)       =      0.77588582
+ E2ind            =     -1.07971063
+ E2exch-ind       =      0.09886684
+ E2disp           =     -1.07613545
+ E2exch-disp      =     -0.00344701
+ Eint(SAPT2)      =     -1.84294451
+
+ SAPT: CHECK OUTPUT FOR 1 WARNINGS!
+********************************************************************************
+ WARNING! NOT POSSIBLE TO DELETE rdm2.dat FILE
+ WARNING! NOT POSSIBLE TO DELETE XY0_A FILE
+ WARNING! NOT POSSIBLE TO DELETE XY0_B FILE
+ WARNING! NOT POSSIBLE TO DELETE PROP_AB0 FILE
+
+ CPU  time in SAPT                 is                1.001 s
+ Wall time in SAPT                 is                1.021 s

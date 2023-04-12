@@ -1,0 +1,10 @@
+
+He----H2* example (H2* = \Sigma_u^+ state), T-shaped geometry
+
+Excercise:
+1. Run FCI  using Quantum Package for monomers A and B
+2. Run SAPT using GammCor
+
+Example jobs on:
+https://qchem.gitlab.io/gammcor-manual/pages/calculation/sapt_methods/running_sapt_qpckg.html
+

@@ -42,6 +42,7 @@ Calculation
  Interface  TREXIO
  JobType    SAPT
  RDMType    CI
+ TwoMoInt   FOFO
  IPrint     11
 end
 
@@ -77,18 +78,18 @@ EOF
 
 ###### end functions ###########
 
-if [ -z $1 ] ; then
-  echo "Error! Please specify path to quantum_package.rc file as the first arg"
-  exit 1
-fi
+#if [ -z $1 ] ; then
+#  echo "Error! Please specify path to quantum_package.rc file as the first arg"
+#  exit 1
+#fi
 
 mkdir -p results
 
 # main loop
-for i in 6.6 19.0 ; do
+for i in 4.0 ; do
 
    get_xyz $i
- 
+
    for m in "A" "B" ; do
 
       # Create initial EZFIO database
@@ -109,23 +110,29 @@ for i in 6.6 19.0 ; do
       fi
 
       # Run SCF
-      qp run scf  >  $m.out
+      qp run scf  >  $m'_'$i'.out'
 
       # Davdison on 1 node only
       qp set davidson_keywords distributed_davidson False     
- 
-      if [ $m == "A" ] ; then
-         qp set determinants n_states 4
-         qp run fci >> $m.out
-         qp edit --state=2
-      elif [ $m == "B" ] ; then
-         qp run fci >> $m.out
+  
+      if [ $m == "B" ] ; then
+
+        qp set determinants n_states 4
+        qp run fci >> $m.out
+      
+        # Extract state 2
+        qp edit --state=2
+
+      elif [ $m == "A" ] ; then
+
+        qp run fci >> $m'_'$i'.out'
+
       fi
 
       # Export HDF5 files for GammCor
-      qp set gammcor_plugin cholesky_tolerance 1.e-8
+      qp set gammcor_plugin cholesky_tolerance 1.e-5
       qp set gammcor_plugin trexio_file \"$m.h5\"
-      qp run export_gammcor >> 'export_'$m'.out'
+      qp run export_gammcor > 'export_'$m'.out'
       qp run gammcor_plugin >> 'export_'$m'.out'
 
    done # end QP2
@@ -139,7 +146,6 @@ for i in 6.6 19.0 ; do
 
    # backup #2
    mkdir -p results/$i
-   mv *.out results/$i/
    mv A.h5  results/$i/
    mv B.h5  results/$i/
 
