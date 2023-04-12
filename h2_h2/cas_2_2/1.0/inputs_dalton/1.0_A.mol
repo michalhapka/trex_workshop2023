@@ -1,0 +1,12 @@
+BASIS
+aug-cc-pVDZ
+H2 dimer : monomer A
+for SAPT(CAS)
+Atomtypes=2 Nosymmetry Bohr
+ Charge=1.0   Atoms=2
+H   0.00000000   0.0000000000    .71993880931 
+H   0.00000000   0.0000000000   -0.72006119069
+ Charge=1.0   Atoms=2   Ghost
+H   0.00000000   0.72006119069 -6.93000000000
+H   0.00000000  -0.72006119069 -6.93000000000
+

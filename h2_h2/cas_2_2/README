@@ -1,0 +1,9 @@
+
+H2---H2 example , T-shaped geometry
+
+1. Folders 1.0 and 5.0 contain results of CAS(2,2)SCF calculations (Dalton)
+2. Run SAPT using GammCor
+
+Example jobs on:
+https://qchem.gitlab.io/gammcor-manual/pages/calculation/sapt_methods/running_sapt_dalton.html
+

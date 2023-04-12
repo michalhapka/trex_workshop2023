@@ -1,0 +1,22 @@
+
+Calculation
+ JobTitle   H2-H2(stretch)
+ Interface  DALTON 
+ JobType    SAPT 
+ RDMType    CAS
+end
+
+! define monA
+System
+ Monomer A
+ NAtoms  2
+ ZNucl   2 
+end
+
+! define monB
+System
+ Monomer B
+ NAtoms  2 
+ ZNucl   2 
+end
+
