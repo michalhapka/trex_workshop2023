@@ -1,0 +1,21 @@
+Calculation
+ JobTitle   H2-H2 1.0 (QPACKAGE)
+ Interface  TREXIO
+ JobType    SAPT
+ RDMType    CI
+end
+
+System
+ Monomer       A
+ NAtoms        2
+ ZNucl         2
+ TrexFile      A.h5
+End
+
+System
+ Monomer       B
+ NAtoms        2
+ ZNucl         2
+ TrexFile      B.h5
+End
+
