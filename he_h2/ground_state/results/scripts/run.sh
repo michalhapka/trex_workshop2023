@@ -121,7 +121,7 @@ for i in 6.6 ; do
       # Export HDF5 files for GammCor
       qp set gammcor_plugin cholesky_tolerance 1.e-5
       qp set gammcor_plugin trexio_file \"$m.h5\"
-      qp run export_gammcor >> 'export_'$m'.out'
+      qp run export_gammcor > 'export_'$m'.out'
       qp run gammcor_plugin >> 'export_'$m'.out'
 
    done # end QP2
