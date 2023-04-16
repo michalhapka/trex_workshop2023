@@ -48,8 +48,8 @@ In each directory submit the job
 sbatch job1
 ```
 
-* Collect the results from gammcor outputs, look for the line `` ECASSCF+ENuc, ACn-Corr, ACn-CASSCF `` at the end of outputs.
+* Collect the results from gammcor.out files, look for the line `` ECASSCF+ENuc, ACn-Corr, ACn-CASSCF `` at the end of outputs.
 
-* Compute S-T energy gaps for CASSCF and ACn-CASSCF from CAS(2,2) and CAS(4,4) reference wavefunctions. Compare the numbers with the reference value of 0.18 eV from Stoneburner et al., J. Chem. Phys. 2017, 147, 164120.
+* Compute S-T energy gaps for CASSCF (``ECASSCF+ENuc``) and ACn-CASSCF (``ACn-CASSCF``) from CAS(2,2) and CAS(4,4) models. Compare the numbers with the reference value of 0.18 eV from Stoneburner et al., J. Chem. Phys. 2017, 147, 164120.
 
 
