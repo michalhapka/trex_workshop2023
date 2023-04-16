@@ -15,6 +15,9 @@ Input files for GammCor with electron integrals and 1,2-reduced density matrices
 #SBATCH --nodelist=cn08
 #SBATCH -t 0:10:00
 #SBATCH --mem=1GB
+
+$GAMMCOR_EXEC="...."
+
 srun $GAMMCOR_EXEC > "gammcor.out"
 ```
 
