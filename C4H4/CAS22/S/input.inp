@@ -1,12 +1,11 @@
 Calculation
- JobTitle           ACn model for Ar atom
+ JobTitle           ACn for C4H4
  Interface          DALTON
  JobType            ACFREQNTH
  Max_Cn             10
  RDMType            CAS
  TwoMoInt           FOFO
  Cholesky           .true.
- Cholesky_Accuracy  DEFAULT
 end
 
 System

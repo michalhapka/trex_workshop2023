@@ -8,8 +8,9 @@ Contains:
 Examples use interface between GammCor and Quantum Package and Dalton programs.
 
 # AC-CASSCF tasks
-- C4H4 (computation of ST gaps for cyclobutadiene in square geometry)
+- C4H4 (computation of ST gap for cyclobutadiene in square geometry)
 
+## Useful links
 Quantum Package website: 
 https://quantum-package.readthedocs.io/en/master/index.html
 
