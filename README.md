@@ -1,5 +1,13 @@
 # GammCor tasks, TREX workshop April 2023
 
+**WARNING**: use a dedicated GammCor branch to compute tasks from this repository
+
+```
+git clone https://git@github.com:pernalk/GAMMCOR.git
+git checkout workshop2023
+```
+
+
 Contains:
 # SAPT(MC) tasks
 - H2-H2 (static correlation exercise)
