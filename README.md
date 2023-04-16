@@ -11,10 +11,10 @@ Examples use interface between GammCor and Quantum Package and Dalton programs.
 - C4H4 (computation of ST gap for cyclobutadiene in square geometry)
 
 ## Useful links
-Quantum Package website: 
+Quantum Package website:
 https://quantum-package.readthedocs.io/en/master/index.html
 
-Dalton Program website: 
+Dalton Program website:
 https://daltonprogram.org/
 
 GammCor website:

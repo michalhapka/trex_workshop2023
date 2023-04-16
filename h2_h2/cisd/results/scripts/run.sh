@@ -3,16 +3,19 @@
 ###### how to use this script #######
 #bash run.sh <path_to_quantum_package.rc> <path_to_gammcor_executable>
 
-# INPUT PARAMETERS 
+##### INPUT PARAMS  ###########
 QP_RC=$1
 GAMMCOR_EXEC=$2
 
 BASIS=aug-cc-pvdz
 
-#QP_RC="$HOME/Programs/qp2
-#GAMMCOR_EXEC="$HOME/Programs/gammcor/build_IntCholesky/gammcor"
+#QP_RC="$HOME/qp2
+#GAMMCOR_EXEC="$HOME/gammcor/build/gammcor"
+
+##### END INPUT PARAMS  #######
 
 source $QP_RC/quantum_package.rc
+export OMP_NUM_THREADS=4
 
 ###### define functions ###########
 
@@ -67,10 +70,13 @@ EOF
 ###### end functions ###########
 
 if [ -z $1 ] ; then
-  echo "Error! Please specify path to quantum_package.rc file as the first arg"
+  echo "Error! Please specify path to quantum_package.rc file as 1st arg"
   exit 1
 fi
-
+if [ -z $2 ] ; then
+  echo "Error! Please specify path to quantum_package.rc file as 2nd arg"
+  exit 1
+fi
 
 # main loop
 for i in 1.0 5.0 ; do
