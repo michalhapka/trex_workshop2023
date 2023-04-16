@@ -1,4 +1,4 @@
-# Computation of singlet-triplet gap of cyclobutadiene
+# Computation of singlet-triplet gap of cyclobutadiene with ACn-CAS 
 
 * Clone the repository 
 ```	
@@ -9,41 +9,41 @@ Input files for GammCor with electron integrals and 1,2-reduced density matrices
 
 * To run GammCor prepare the ``run.sh`` script (provide the correct path to gammcor in ``GAMMCOR_EXEC="...."``)
 ```
-#!/bin/bash
+	#!/bin/bash
 
-GAMMCOR_EXEC="...."
+	GAMMCOR_EXEC="...."
 
-$DALTON_EXEC -noarch -t . -get "AOTWOINT AOONEINT SIRIFC SIRIUS.RST rdm2.dat " $1  > aaa
+	$DALTON_EXEC -noarch -t . -get "AOTWOINT AOONEINT SIRIFC SIRIUS.RST rdm2.dat " $1  > aaa
 
-mv $1.AOONEINT   AOONEINT
-mv $1.AOTWOINT   AOTWOINT
-mv $1.SIRIFC     SIRIFC
-mv $1.SIRIUS.RST SIRIUS.RST
-mv $1.rdm2.dat   rdm2.dat
+	mv $1.AOONEINT   AOONEINT
+	mv $1.AOTWOINT   AOTWOINT
+	mv $1.SIRIFC     SIRIFC
+	mv $1.SIRIUS.RST SIRIUS.RST
+	mv $1.rdm2.dat   rdm2.dat
 
-rm -rf DALTON_scratch* aaa
+	rm -rf DALTON_scratch* aaa
 
-export MKL_NUM_THREADS=1
+	export MKL_NUM_THREADS=1
 
-$GAMMCOR_EXEC > "gammcor.out"
+	$GAMMCOR_EXEC > "gammcor.out"
 ```
 
 and the slurm scirpt ``job1`` 
 
 ```
-#!/bin/bash
-#SBATCH -n 1
-#SBATCH -c 4
-#SBATCH --nodelist=cn08
-#SBATCH -t 1:00:00
-#SBATCH --mem=20GB
-srun ./run.sh c4h4
+	#!/bin/bash
+	#SBATCH -n 1
+	#SBATCH -c 1
+	#SBATCH --nodelist=cn08
+	#SBATCH -t 1:00:00
+	#SBATCH --mem=20GB
+	srun ./run.sh c4h4
 ```
 
 * Copy scripts to ``CAS22/S, CAS22/T, CAS44/S, CAS44/T`` directories. 
 In each directory submit the job
 ```
-sbatch job1
+	sbatch job1
 ```
 
 * Collect the results from gammcor.out files, look for the line `` ECASSCF+ENuc, ACn-Corr, ACn-CASSCF `` at the end of outputs.
