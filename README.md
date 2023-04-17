@@ -17,6 +17,7 @@ Examples use interface between GammCor and Quantum Package and Dalton programs.
 
 ```
 git clone https://git@github.com/pernalk/GAMMCOR.git
+cd GAMMCOR
 git checkout workshop2023
 ```
 
