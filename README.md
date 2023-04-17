@@ -16,7 +16,7 @@ Examples use interface between GammCor and Quantum Package and Dalton programs.
 **WARNING**: use a dedicated GammCor branch to compute tasks from this repository
 
 ```
-git clone https://git@github.com:pernalk/GAMMCOR.git
+git clone https://git@github.com/pernalk/GAMMCOR.git
 git checkout workshop2023
 ```
 
