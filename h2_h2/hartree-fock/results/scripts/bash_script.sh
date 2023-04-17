@@ -1,26 +1,17 @@
 #!/bin/bash
-#SBATCH -n 1
-#SBATCH -t 00:10:00
-#SBATCH --mem=2GB
-#SBATCH --nodelist=cn08
 
 ###### how to use this script #######
-# sbatch run.sh <path_to_quantum_package.rc> <path_to_gammcor_executable>
+#bash run.sh <path_to_quantum_package.rc> <path_to_gammcor_executable>
 
-##### INPUT PARAMS  ###########
-
+# input parammeters
 QP_RC=$1
 GAMMCOR_EXEC=$2
 
-BASIS=aug-cc-pvdz
-
-#QP_RC="/home/michalhapka/qp2"
-#GAMMCOR_EXEC="/home/michalhapka/pr-dmft/gammcor"
-
-##### END INPUT PARAMS  #######
+#QP_RC="$HOME/Programs/qp2
+#GAMMCOR_EXEC="$HOME/Programs/gammcor/build_IntCholesky/gammcor"
 
 if [ -z $1 ] ; then
-  echo "Error! Please specify path to quantum_package.rc file as the 1st arg"
+  echo "Error! Please specify path to quantum_package.rc file as the first arg"
   exit 1
 fi
 if [ -z $2 ] ; then
@@ -28,15 +19,7 @@ if [ -z $2 ] ; then
   exit 1
 fi
 
-cwd=$(srun echo $PWD)
-mkdir -p /tmp/$$
-cd /tmp/$$
-
-source $QP_RC/quantum_package.rc
-
-export OMP_NUM_THREADS=4
-
-###### define functions ###########
+###################################
 
 function grepper {
 local output=$1
@@ -86,32 +69,15 @@ EOF
 
 }
 
-function input_geom {
-local dist=$1
-local output=$2
-
-dist=$(echo "$dist * 1.44 - 0.72006119069" | bc -l )
-
-cat << EOF > $output
-4
-! bohr
-H   0.00000000   0.0000000000    $dist
-H   0.00000000   0.0000000000   -0.72006119069
-H   0.00000000   0.72006119069  -6.93000000000
-H   0.00000000  -0.72006119069  -6.93000000000
-EOF
-
-}
-
-###### end functions ###########
-
 # main loop
-for i in 1.0 5.0 ; do
+
+source $QP_RC/quantum_package.rc
+
+BASIS=aug-cc-pvdz
+
+for i in 1.44 7.20 ; do
 
    for m in "A" "B" ; do
-
-      # set-up geometry
-      input_geom $i h2_h2_$i.xyz
 
       # Create initial EZFIO database
       qp create_ezfio -a -b $BASIS h2_h2_$i.xyz -o $m'_'$i
@@ -131,8 +97,7 @@ for i in 1.0 5.0 ; do
       fi
 
       # Run SCF
-      qp run scf  >  $m'_'$i'.out'
-      qp run cisd >> $m'_'$i'.out'
+      qp run scf > $m'_'$i'.out'
 
       # Export HDF5 files for GammCor
       qp set gammcor_plugin cholesky_tolerance 1.e-5
@@ -140,11 +105,12 @@ for i in 1.0 5.0 ; do
       qp run export_gammcor >> 'export_'$m'.out'
       qp run gammcor_plugin >> 'export_'$m'.out'
 
-      ## backup #1
-      mkdir -p $cwd/results
-      mkdir -p $cwd/results/$i
-      mv $m'_'$i'.out'     $cwd/results/$i
-      mv 'export_'$m'.out' $cwd/results/$i
+      # backup 1
+      mkdir -p results
+      mkdir -p results/$i
+      mv $m'_'$i'.out'     results/$i
+      mv $m'_'$i'.out'     results/$i
+      mv 'export_'$m'.out' results/$i
 
    done # end QP2
 
@@ -155,13 +121,9 @@ for i in 1.0 5.0 ; do
    $GAMMCOR_EXEC > 'gammcor_'$i'.out'
    grepper "gammcor_"$i".out" $i
 
-   ## backup #2
-   mv "gammcor_"$i".out" $cwd/results/$i
-   mv A.h5  $cwd/results/$i
-   mv B.h5  $cwd/results/$i
+   # backup 2
+   mv A.h5  results/$i
+   mv B.h5  results/$i
 
 done
-
-# remove scratch
-rm -r /tmp/$$
 

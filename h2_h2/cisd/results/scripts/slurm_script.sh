@@ -1,23 +1,16 @@
 #!/bin/bash
 #SBATCH -n 1
+#SBATCH -c 4
 #SBATCH -t 00:10:00
 #SBATCH --mem=2GB
 #SBATCH --nodelist=cn08
 
 ###### how to use this script #######
-# sbatch run.sh <path_to_quantum_package.rc> <path_to_gammcor_executable>
+## sbatch run.sh <path_to_quantum_package.rc> <path_to_gammcor_executable>
 
-##### INPUT PARAMS  ###########
-
+# input parameters
 QP_RC=$1
 GAMMCOR_EXEC=$2
-
-BASIS=aug-cc-pvdz
-
-#QP_RC="/home/michalhapka/qp2"
-#GAMMCOR_EXEC="/home/michalhapka/pr-dmft/gammcor"
-
-##### END INPUT PARAMS  #######
 
 if [ -z $1 ] ; then
   echo "Error! Please specify path to quantum_package.rc file as the 1st arg"
@@ -28,15 +21,16 @@ if [ -z $2 ] ; then
   exit 1
 fi
 
-cwd=$(srun echo $PWD)
+###################################
+
+cwd=$(pwd)
+
 mkdir -p /tmp/$$
 cd /tmp/$$
 
 source $QP_RC/quantum_package.rc
 
 export OMP_NUM_THREADS=4
-
-###### define functions ###########
 
 function grepper {
 local output=$1
@@ -90,7 +84,7 @@ function input_geom {
 local dist=$1
 local output=$2
 
-dist=$(echo "$dist * 1.44 - 0.72006119069" | bc -l )
+dist=$(echo "$dist - 0.72006119069" | bc -l )
 
 cat << EOF > $output
 4
@@ -103,10 +97,10 @@ EOF
 
 }
 
-###### end functions ###########
+BASIS=aug-cc-pvdz
 
 # main loop
-for i in 1.0 5.0 ; do
+for i in 1.44 7.20 ; do
 
    for m in "A" "B" ; do
 
@@ -132,6 +126,7 @@ for i in 1.0 5.0 ; do
 
       # Run SCF
       qp run scf  >  $m'_'$i'.out'
+      qp run cisd >> $m'_'$i'.out'
 
       # Export HDF5 files for GammCor
       qp set gammcor_plugin cholesky_tolerance 1.e-5
@@ -142,7 +137,6 @@ for i in 1.0 5.0 ; do
       ## backup #1
       mkdir -p $cwd/results
       mkdir -p $cwd/results/$i
-      mv $m'_'$i'.out'     $cwd/results/$i
       mv $m'_'$i'.out'     $cwd/results/$i
       mv 'export_'$m'.out' $cwd/results/$i
 

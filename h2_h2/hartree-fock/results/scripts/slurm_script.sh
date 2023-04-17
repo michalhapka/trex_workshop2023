@@ -1,21 +1,41 @@
 #!/bin/bash
+#SBATCH -n 1
+#SBATCH -c 4
+#SBATCH -t 00:10:00
+#SBATCH --mem=2GB
+#SBATCH --nodelist=cn08
 
+###### An example SLURM script ######
+######      H2-H2 example      ######
 ###### how to use this script #######
-#bash run.sh <path_to_quantum_package.rc> <path_to_gammcor_executable>
 
-##### INPUT PARAMS  ###########
+## sbatch run.sh <path_to_quantum_package.rc> <path_to_gammcor_executable>
+
+# input parameters
 QP_RC=$1
 GAMMCOR_EXEC=$2
 
-BASIS=aug-cc-pvdz
+if [ -z $1 ] ; then
+  echo "Error! Please specify path to quantum_package.rc file as the 1st arg"
+  exit 1
+fi
+if [ -z $2 ] ; then
+  echo "Error! Please specify path to GammCor executable as the 2nd arg"
+  exit 1
+fi
 
-#QP_RC="$HOME/qp2
-#GAMMCOR_EXEC="$HOME/gammcor/build/gammcor"
+###################################
 
-##### END INPUT PARAMS  #######
+cwd=$(pwd)
+
+mkdir -p /tmp/$$
+cd /tmp/$$
 
 source $QP_RC/quantum_package.rc
+
 export OMP_NUM_THREADS=4
+
+BASIS=aug-cc-pvdz
 
 ###### define functions ###########
 
@@ -67,21 +87,32 @@ EOF
 
 }
 
+function input_geom {
+local dist=$1
+local output=$2
+
+dist=$(echo "$dist * 1.44 - 0.72006119069" | bc -l )
+
+cat << EOF > $output
+4
+! bohr
+H   0.00000000   0.0000000000    $dist
+H   0.00000000   0.0000000000   -0.72006119069
+H   0.00000000   0.72006119069  -6.93000000000
+H   0.00000000  -0.72006119069  -6.93000000000
+EOF
+
+}
+
 ###### end functions ###########
 
-if [ -z $1 ] ; then
-  echo "Error! Please specify path to quantum_package.rc file as 1st arg"
-  exit 1
-fi
-if [ -z $2 ] ; then
-  echo "Error! Please specify path to quantum_package.rc file as 2nd arg"
-  exit 1
-fi
-
 # main loop
-for i in 1.0 5.0 ; do
+for i in 1.44 7.20 ; do
 
    for m in "A" "B" ; do
+
+      # set-up geometry
+      input_geom $i h2_h2_$i.xyz
 
       # Create initial EZFIO database
       qp create_ezfio -a -b $BASIS h2_h2_$i.xyz -o $m'_'$i
@@ -102,7 +133,6 @@ for i in 1.0 5.0 ; do
 
       # Run SCF
       qp run scf  >  $m'_'$i'.out'
-      qp run cisd >> $m'_'$i'.out'
 
       # Export HDF5 files for GammCor
       qp set gammcor_plugin cholesky_tolerance 1.e-5
@@ -110,26 +140,29 @@ for i in 1.0 5.0 ; do
       qp run export_gammcor >> 'export_'$m'.out'
       qp run gammcor_plugin >> 'export_'$m'.out'
 
-      # backup #1
-      mkdir -p results
-      mkdir -p results/$i
-      mv $m'_'$i'.out'     results/$i
-      mv $m'_'$i'.out'     results/$i
-      mv 'export_'$m'.out' results/$i
+      ## backup #1
+      mkdir -p $cwd/results
+      mkdir -p $cwd/results/$i
+      mv $m'_'$i'.out'     $cwd/results/$i
+      mv $m'_'$i'.out'     $cwd/results/$i
+      mv 'export_'$m'.out' $cwd/results/$i
 
-   done # end QP2
+   done
 
-   export OMP_NUM_THREADS=1
+   export OMP_NUM_THREADS=4
 
    # run GammCor
    input_gammcor $i
    $GAMMCOR_EXEC > 'gammcor_'$i'.out'
    grepper "gammcor_"$i".out" $i
 
-   # backup #2
-   mv "gammcor_"$i".out" results/$i
-   mv A.h5  results/$i
-   mv B.h5  results/$i
+   ### backup #2
+   #mv "gammcor_"$i".out" $cwd/results/$i
+   #mv A.h5  $cwd/results/$i
+   #mv B.h5  $cwd/results/$i
 
 done
+
+# remove scratch
+rm -r /tmp/$$
 

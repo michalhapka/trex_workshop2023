@@ -3,18 +3,23 @@
 ###### how to use this script #######
 #bash run.sh <path_to_quantum_package.rc> <path_to_gammcor_executable>
 
-# INPUT PARAMETERS 
+#input parameters
 QP_RC=$1
 GAMMCOR_EXEC=$2
 
-BASIS=aug-cc-pvdz
+#QP_RC="$HOME/qp2
+#GAMMCOR_EXEC="$HOME/gammcor/build/gammcor"
 
-#QP_RC="$HOME/Programs/qp2
-#GAMMCOR_EXEC="$HOME/Programs/gammcor/build_IntCholesky/gammcor"
+if [ -z $1 ] ; then
+  echo "Error! Please specify path to quantum_package.rc file as 1st arg"
+  exit 1
+fi
+if [ -z $2 ] ; then
+  echo "Error! Please specify path to quantum_package.rc file as 2nd arg"
+  exit 1
+fi
 
-source $QP_RC/quantum_package.rc
-
-###### define functions ###########
+###############################
 
 function grepper {
 local output=$1
@@ -64,13 +69,10 @@ EOF
 
 }
 
-###### end functions ###########
+source $QP_RC/quantum_package.rc
+export OMP_NUM_THREADS=4
 
-if [ -z $1 ] ; then
-  echo "Error! Please specify path to quantum_package.rc file as the first arg"
-  exit 1
-fi
-
+BASIS=aug-cc-pvdz
 
 # main loop
 for i in 1.0 5.0 ; do
@@ -95,7 +97,8 @@ for i in 1.0 5.0 ; do
       fi
 
       # Run SCF
-      qp run scf > $m'_'$i'.out'
+      qp run scf  >  $m'_'$i'.out'
+      qp run cisd >> $m'_'$i'.out'
 
       # Export HDF5 files for GammCor
       qp set gammcor_plugin cholesky_tolerance 1.e-5
@@ -103,7 +106,7 @@ for i in 1.0 5.0 ; do
       qp run export_gammcor >> 'export_'$m'.out'
       qp run gammcor_plugin >> 'export_'$m'.out'
 
-      # backup 1
+      # backup #1
       mkdir -p results
       mkdir -p results/$i
       mv $m'_'$i'.out'     results/$i
@@ -119,7 +122,8 @@ for i in 1.0 5.0 ; do
    $GAMMCOR_EXEC > 'gammcor_'$i'.out'
    grepper "gammcor_"$i".out" $i
 
-   # backup 2
+   # backup #2
+   mv "gammcor_"$i".out" results/$i
    mv A.h5  results/$i
    mv B.h5  results/$i
 
