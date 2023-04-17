@@ -1,7 +1,7 @@
 # H2---H2 example
 
 - Run Hartree-Fock using Quantum Package for monomers A and B. The coordinates are given in .xyz files. Use aug-cc-pvdz basis set.
-- Run SAPT using GammCor
+- Run SAPT using GammCor.
 
 See the attached **exercises.pdf** file for details.
 
