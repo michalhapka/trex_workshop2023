@@ -7,7 +7,6 @@ git clone https://git@github.com:pernalk/GAMMCOR.git
 git checkout workshop2023
 ```
 
-
 Contains:
 # SAPT(MC) tasks
 - H2-H2 (static correlation exercise)
@@ -17,6 +16,9 @@ Examples use interface between GammCor and Quantum Package and Dalton programs.
 
 # AC-CASSCF tasks
 - C4H4 (computation of ST gap for cyclobutadiene in square geometry)
+
+# Manual
+- exercises.pdf
 
 ## Useful links
 Quantum Package website:

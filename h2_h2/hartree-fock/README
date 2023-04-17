@@ -1,9 +1,0 @@
-
-H2---H2 example , T-shaped geometry
-
-1. Run CISD using Quantum Package for monomers A and B 
-2. Run SAPT using GammCor
-
-Example jobs on:
-https://qchem.gitlab.io/gammcor-manual/pages/calculation/sapt_methods/running_sapt_qpckg.html
-
