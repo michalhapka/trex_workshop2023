@@ -1,0 +1,22 @@
+Calculation
+ JobTitle   He-H2* 4.0 (QPACKAGE)
+ Interface  TREXIO
+ JobType    SAPT
+ RDMType    CI
+ IPrint     11
+end
+
+System
+ Monomer       A
+ NAtoms        .. 
+ ZNucl         ..
+ TrexFile      ..
+End
+
+System
+ Monomer       B
+ NAtoms        ..
+ ZNucl         ..
+ TrexFile      ..
+End
+
