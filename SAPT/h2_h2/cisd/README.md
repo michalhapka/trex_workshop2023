@@ -1,8 +1,7 @@
+# H2---H2 example
 
-H2---H2 example , T-shaped geometry
-
-1. Run Hartree-Fock using Quantum Package for monomers A and B. Use the provided .xyz files and aug-cc-pvdz basis set.
-2. Run SAPT using GammCor
+- Run CISD using Quantum Package for monomers A and B. Coordinates are given in .xyz files. Use aug-cc-pvdz basis set.
+- Run SAPT using GammCor
 
 See the attached exercises.pdf file for details.
 
