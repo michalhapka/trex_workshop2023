@@ -46,7 +46,7 @@ mkdir -p MONOMER_B
 ### CALCULATION STARTS HERE
 # ****************************************
 
-for i in 1.0 5.0 ; do
+for i in 1.44 7.20 ; do
 
    cp $i'_A.mol'  MONOMER_A/run.mol
    cp $i'_A.dal'  MONOMER_A/run.dal
