@@ -132,6 +132,8 @@ for i in 1.44 7.20 ; do
 
    mv "gammcor_"$i".out" $cwd
 
+   rm -f *.h5
+
 done
 
 # remove scratch
