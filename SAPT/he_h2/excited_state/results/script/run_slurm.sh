@@ -125,46 +125,40 @@ for i in 4.0 ; do
       fi
 
       # Run SCF
-      qp run scf  >  $m'_'$i'.out'
+      qp run scf > $m.out
 
       # Davdison on 1 node only
       qp set davidson_keywords distributed_davidson False     
 
-      # backup 1
-      mkdir -p $cwd/results/$i
-
       if [ $m == "B" ] ; then
 
         qp set determinants n_states 4
-        qp run fci >> $cwd/results/$i/$m.out
+        qp run fci >> $cwd/$m.out
       
         # Extract state 2
         qp edit --state=2
 
       elif [ $m == "A" ] ; then
 
-        qp run fci >> $cwd/results/$i/$m.out
+        qp run fci >> $cwd/$m.out
 
       fi
 
       # Export HDF5 files for GammCor
       qp set gammcor_plugin cholesky_tolerance 1.e-5
       qp set gammcor_plugin trexio_file \"$m.h5\"
-      qp run export_gammcor >> $cwd/results/$i/'export_'$m'.out'
-      qp run gammcor_plugin >> $cwd/results/$i/'export_'$m'.out'
+      qp run export_gammcor >> $cwd/'export_'$m'.out'
+      qp run gammcor_plugin >> $cwd/'export_'$m'.out'
 
-   done # end QP2
+   done
 
    export OMP_NUM_THREADS=1
 
    # run GammCor
    input_gammcor $i
-   $GAMMCOR_EXEC > $cwd/results/$i/'gammcor_'$i'.out'
-   grepper $cwd/results/$i/"gammcor_"$i".out" $i
+   $GAMMCOR_EXEC > $cwd/'gammcor_'$i'.out'
 
-   # backup #2
-   mv A.h5  $cwd/results/$i/
-   mv B.h5  $cwd/results/$i/
+   rm -f *h5
 
 done
 
