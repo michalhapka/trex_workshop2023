@@ -32,22 +32,6 @@ source $QP_RC/quantum_package.rc
 
 export OMP_NUM_THREADS=4
 
-function grepper {
-local output=$1
-local dist=$2
-
- elst=$(grep "Eelst"        $output | awk '{print $3}')
- e1ex=$(grep "E1exch(S2)"   $output | awk '{print $3}')
- e2ind=$(grep "E2ind "      $output | tail -1 | awk '{print $3}')
- e2disp=$(grep "E2disp "    $output | tail -1 | awk '{print $3}')
- e2xi=$(grep "E2exch-ind"   $output | tail -1 | awk '{print $3}')
- e2xd=$(grep "E2exch-disp " $output | tail -1 | awk '{print $3}')
- etot=$(grep "Eint(SAPT"    $output | awk '{print $3}')
-
- echo $dist,$elst,$e1ex,$e2ind,$e2xi,$e2disp,$e2xd,$etot >> res.dat
-
-}
-
 function input_gammcor {
 local dist=$1
 
@@ -135,24 +119,18 @@ for i in 1.44 7.20 ; do
       qp run gammcor_plugin >> 'export_'$m'.out'
 
       ## backup #1
-      mkdir -p $cwd/results
-      mkdir -p $cwd/results/$i
-      mv $m'_'$i'.out'     $cwd/results/$i
-      mv 'export_'$m'.out' $cwd/results/$i
+      mv $m'_'$i'.out'     $cwd
+      mv 'export_'$m'.out' $cwd
 
-   done # end QP2
+   done
 
    export OMP_NUM_THREADS=1
 
    # run GammCor
    input_gammcor $i
    $GAMMCOR_EXEC > 'gammcor_'$i'.out'
-   grepper "gammcor_"$i".out" $i
 
-   ## backup #2
-   mv "gammcor_"$i".out" $cwd/results/$i
-   mv A.h5  $cwd/results/$i
-   mv B.h5  $cwd/results/$i
+   mv "gammcor_"$i".out" $cwd
 
 done
 
