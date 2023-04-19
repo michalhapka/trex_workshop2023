@@ -35,22 +35,6 @@ source $QP_RC/quantum_package.rc
 
 ###### define functions ###########
 
-function grepper {
-local output=$1
-local dist=$2
-
- elst=$(grep "Eelst"        $output | awk '{print $3}')
- e1ex=$(grep "E1exch(S2)"   $output | awk '{print $3}')
- e2ind=$(grep "E2ind "      $output | tail -1 | awk '{print $3}')
- e2disp=$(grep "E2disp "    $output | tail -1 | awk '{print $3}')
- e2xi=$(grep "E2exch-ind"   $output | tail -1 | awk '{print $3}')
- e2xd=$(grep "E2exch-disp " $output | tail -1 | awk '{print $3}')
- etot=$(grep "Eint(SAPT"    $output | awk '{print $3}')
-
- echo $dist,$elst,$e1ex,$e2ind,$e2xi,$e2disp,$e2xd,$etot >> res.dat
-
-}
-
 function input_gammcor {
 local dist=$1
 
@@ -130,22 +114,18 @@ for i in 6.6 ; do
       fi
 
       # Run SCF
-      qp run scf  >  $m'_'$i'.out'
+      qp run scf >  $cwd/$m.out
 
       # Davdison on 1 node only
       qp set davidson_keywords distributed_davidson False     
 
-      # backup 1
-      mkdir -p $cwd/results
-      mkdir -p $cwd/results/$i
-  
-      qp run cisd >> $cwd/results/$i/$m.out
+      qp run cisd >> $cwd/$m.out
 
       # Export HDF5 files for GammCor
       qp set gammcor_plugin cholesky_tolerance 1.e-5
       qp set gammcor_plugin trexio_file \"$m.h5\"
-      qp run export_gammcor >> $cwd/results/$i/'export_'$m'.out'
-      qp run gammcor_plugin >> $cwd/results/$i/'export_'$m'.out'
+      qp run export_gammcor >  $cwd/'export_'$m'.out'
+      qp run gammcor_plugin >> $cwd/'export_'$m'.out'
 
    done # end QP2
 
@@ -153,12 +133,9 @@ for i in 6.6 ; do
 
    # run GammCor
    input_gammcor $i
-   $GAMMCOR_EXEC > $cwd/results/$i/'gammcor_'$i'.out'
-   grepper $cwd/results/$i/"gammcor_"$i".out" $i
+   $GAMMCOR_EXEC > $cwd/'gammcor_'$i'.out'
 
-   # backup #2
-   mv A.h5  $cwd/results/$i/
-   mv B.h5  $cwd/results/$i/
+   rm -r *.h5
 
 done
 
