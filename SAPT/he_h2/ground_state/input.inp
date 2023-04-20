@@ -20,3 +20,6 @@ System
  TrexFile      ..
 End
 
+! comment:
+!  NAtoms -- number of atoms in the monomer
+!  ZNucl  -- number of electrons in the monomer
